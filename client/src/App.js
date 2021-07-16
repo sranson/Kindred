@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import SearchBar from './components/SearchBar';
 import Matches from './components/Matches';
 import Settings from './components/Settings'
+import './App.css';
 
 function App() {
   return (
