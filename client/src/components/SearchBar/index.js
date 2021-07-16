@@ -18,6 +18,9 @@ const SearchBar = () => {
                             <li><a className="dropdown-item" href="#">Games</a></li>
                         </ul>
                     <input type="text" className="form-control" aria-label="Text input with dropdown button" />
+                    <div style={{ marginLeft:"0.5%"}}>
+                        <button type="button" class="btn btn-dark">Search</button>
+                    </div>
                 </div>
             </div>
         </div>
