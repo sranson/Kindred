@@ -9,6 +9,7 @@ class SearchBar extends React.Component {
 
  onSearchBtnClick = () => {
      console.log(this.state.searchTerm);
+     console.log(this.state.searchCategory);
  }
 
     render() {
@@ -18,13 +19,13 @@ class SearchBar extends React.Component {
                         <div className="input-group mb-3">
                             <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" value="music" >Music</a></li>
-                                    <li><a className="dropdown-item" value="movies">Movies</a></li>
-                                    <li><a className="dropdown-item" value="tvShows">TV Shows</a></li>
-                                    <li><a className="dropdown-item" value="podcasts">Podcasts</a></li>
-                                    <li><a className="dropdown-item" value="books">Books</a></li>
-                                    <li><a className="dropdown-item" value="authors">Authors</a></li>
-                                    <li><a className="dropdown-item" value="games">Games</a></li>
+                                    <li><a className="dropdown-item" value="music" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Music</a></li>
+                                    <li><a className="dropdown-item" value="movies" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Movies</a></li>
+                                    <li><a className="dropdown-item" value="tvShows" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>TV Shows</a></li>
+                                    <li><a className="dropdown-item" value="podcasts" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Podcasts</a></li>
+                                    <li><a className="dropdown-item" value="books" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Books</a></li>
+                                    <li><a className="dropdown-item" value="authors" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Authors</a></li>
+                                    <li><a className="dropdown-item" value="games" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Games</a></li>
                                 </ul>
                             <input 
                                 type="text" 
