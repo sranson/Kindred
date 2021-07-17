@@ -1,5 +1,5 @@
 import React from 'react'
-// import axios from 'axios';
+import axios from 'axios';
 import './SearchBar.css';
 
 
@@ -12,23 +12,21 @@ class SearchBar extends React.Component {
     let category = this.state.searchCategory;
     console.log(`Category: ${category}`);
     console.log(`Search Term: ${term}`);
-    // axios.get('https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar', {
-    //     params: {
-    //         q: term,
-    //         type: category,
-    //         info: 1,
-    //         limit: 10,
-    //     },
-    //     headers: {
-    //         Authorization: ''
-    //     }
-    // }).then(results => { 
-    //     // console.log(results);
-    //     console.log(results.data.Similar.Info);
-    //     // console.log(results.similar.results); 
-    // }).catch((err) => {
-    //     console.log(err);
-    // })
+    axios.get('https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar', {
+        params: {
+            q: term,
+            type: category,
+            info: 1,
+            limit: 10,
+        },
+        headers: {
+            Authorization: ''
+        }
+    }).then(results => { 
+        console.log(results);
+    }).catch((err) => {
+        console.log(err);
+    })
     this.setState({ searchTerm: '' });                                              // Clear out the input text after 'Search' button is clicked
  }
 
