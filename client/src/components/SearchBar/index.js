@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
             q: term,
             type: category,
             info: 1,
-            limit: 10,
+            limit: 9,
           },
           headers: {
             Authorization: "",
@@ -38,10 +38,6 @@ class SearchBar extends React.Component {
         this.setState({ searchedForDescrip: results.data.Similar.Info[0].wTeaser.substring(0, 100) })
         this.setState({ searchedForWiky: results.data.Similar.Info[0].wUrl })
         this.setState({ similarities: results.data.Similar.Results })
-
-        console.log(this.state.searchedTitle);
-        console.log(this.state.searchedForDescrip);
-        console.log(this.state.searchedForWiky);
         console.log(this.state.similarities);
       })
       .catch((err) => {
