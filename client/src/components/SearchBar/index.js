@@ -37,7 +37,7 @@ class SearchBar extends React.Component {
             <div>
                 <div className="row" style={{ marginTop:"3%", marginLeft:"3%", marginRight:"3%" }}>
                         <div className="input-group mb-3">
-                            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{this.state.searchCategory}</button>
+                            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{this.state.searchCategory.toUpperCase()}</button>
                                 <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: 'Music' })}>Music</a></li>
                                     <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: 'Movies' })}>Movies</a></li>
