@@ -71,7 +71,6 @@ class SearchBar extends React.Component {
   };
 
   render() {
-    if (this.state.searchedImage == '') {
       return (
         <div>
           <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }} >
@@ -88,34 +87,7 @@ class SearchBar extends React.Component {
                 <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Authors" })}>Authors</a></li>
                 <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Games" })}>Games</a></li>
               </ul>
-  
-              <input type="text" className="form-control" aria-label="Text input with dropdown button" value={this.state.searchTerm} onChange={(e) => this.setState({ searchTerm: e.target.value })}/>
-  
-              <div style={{ marginLeft: "0.5%" }}>
-                <button type="button" className="btn btn-dark" onClick={this.onSearchBtnClick}>Search</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ); // End of return statement
-    } else if(this.state.searchedImage !== '') {
-      return (
-        <div>
-          <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }} >
-            <div className="input-group mb-3">
-              <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {this.state.searchCategory.toUpperCase()}
-              </button>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Music" })} >Music</a></li>
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Movies" })}>Movies</a></li>
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "shows" })}>Shows</a></li>
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "podcasts" })}>Podcasts</a></li>
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Books" })}>Books</a></li>
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Authors" })}>Authors</a></li>
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Games" })}>Games</a></li>
-              </ul>
-  
+
               <input type="text" className="form-control" aria-label="Text input with dropdown button" value={this.state.searchTerm} onChange={(e) => this.setState({ searchTerm: e.target.value })}/>
   
               <div style={{ marginLeft: "0.5%" }}>
@@ -126,7 +98,6 @@ class SearchBar extends React.Component {
           <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/> 
         </div>
       ); // End of return statement
-    }
   }  // End of render methis
 }
 
