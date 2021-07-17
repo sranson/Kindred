@@ -4,15 +4,19 @@ import Card from '../Card'
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
-  state = { searchTerm: "", searchCategory: "" };
-
-  state = { searchTerm: "", searchCategory: "" };
+  state = { 
+    searchTerm: "", 
+    searchCategory: "",
+    searchedForDescrip: "",
+    searchedTitle: "",
+    searchedForWiky: "",
+    searchedImage: "",
+    similarities: [] 
+  };
 
   onSearchBtnClick = () => {
     let term = this.state.searchTerm;
     let category = this.state.searchCategory;
-    // console.log(`Category: ${category}`);
-    // console.log(`Search Term: ${term}`);
 
 
     // Tastedive API call to get similar results
@@ -30,42 +34,42 @@ class SearchBar extends React.Component {
         }
       )
       .then((results) => {
-        // let searchTerm = results.data.Similar.Info[0]
-        let searchTermTitle = results.data.Similar.Info[0].Name
-        let searchTermDescription = results.data.Similar.Info[0].wTeaser.substring(0, 100)
-        let searchTermWiky = results.data.Similar.Info[0].wUrl
-        // let similaritiesArray = results.data.Similar.Results
-        // console.log(searchTerm);
-        console.log(searchTermTitle);
-        console.log(searchTermDescription);
-        console.log(searchTermWiky);
-        // console.log(similaritiesArray);
+        this.setState({ searchedTitle: results.data.Similar.Info[0].Name })
+        this.setState({ searchedForDescrip: results.data.Similar.Info[0].wTeaser.substring(0, 100) })
+        this.setState({ searchedForWiky: results.data.Similar.Info[0].wUrl })
+        this.setState({ similarities: results.data.Similar.Results })
+
+        console.log(this.state.searchedTitle);
+        console.log(this.state.searchedForDescrip);
+        console.log(this.state.searchedForWiky);
+        console.log(this.state.similarities);
       })
       .catch((err) => {
         console.log(err);
       });
 
-      // Web Search (imageSearch) API call to get images
-      // let images = {
-      //   method: 'GET',
-      //   url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI',
-      //   params: {
-      //     q: term, 
-      //     pageNumber: '1', 
-      //     pageSize: '1', 
-      //     autoCorrect: 'true'},
-      //   headers: {
-      //     'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
-      //     'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-      //   }
-      // };
-      // axios.request(images).then(function (response) {
-      //   // console.log(response.data);
-      //   let targetImage = response.data.value[0].thumbnail;
-      //   console.log(targetImage);
-      // }).catch(function (error) {
-      //   console.error(error);
-      // });
+
+    axios.get("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
+      {
+        params: {
+          q: term, 
+          pageNumber: '1', 
+          pageSize: '1', 
+          autoCorrect: 'true'},
+        headers: {
+          'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
+          'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+        }
+      }
+    )
+    .then((response) => {
+        // console.log(response.data.value[0].thumbnail);
+        this.setState({ searchedImage: response.data.value[0].thumbnail })
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
 
     this.setState({ searchTerm: "" }); // Clear out the input text after 'Search' button is clicked
   };
@@ -162,7 +166,7 @@ class SearchBar extends React.Component {
             </div>
           </div>
         </div>
-        {/* <Card image={targetImage} title={searchTermTitle} description={searchTermDescription} moreInfo={searchTermWiky}/> */}
+        <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
       </div>
     );
   }
