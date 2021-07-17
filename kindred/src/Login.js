@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css'
+import Button from 'react-bootstrap/Button';
 
 export default function Login() {
     return (
@@ -7,14 +8,14 @@ export default function Login() {
             <h1 className='title'>
                 <p>Kindred</p>
             </h1>
-            <h2 className='subtitle'>
+            <p className='subtitle'>
                 <p>Spark an Interest</p>
-            </h2>
-            <div>
-                <Button className='login' variant="secondary" size="lg">
+            </p>
+            <div className="d-grid gap-2">
+                <Button id='login' variant="secondary" size="lg">
                     Login
                 </Button>
-                <Button className='signup' variant="secondary" size="lg">
+                <Button id='signup' variant="secondary" size="lg">
                     Sign Up
                 </Button>
             </div>

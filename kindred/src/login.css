@@ -1,28 +1,32 @@
-*{
-    box-sizing: border-box;
-}
-
 main {
     background: #bddac8;
+    box-sizing: border-box;
+    height: 100vh;
 }
 
 .title {
     font-family: 'Odibee Sans';
-    font-size: large;
+    font-size: 200px;
     color: #152c43;
+    text-align: center;
 }
 
 .subtitle {
-    font-family: 'Mr. Dafoe';
-    font-size: medium;
+    font-family: 'Mr Dafoe';
+    font-size: 50px;
     color: #152c43;
+    text-align: center;
 }
 
-.login {
-    border: 5px;
-    color: #72808e;
+#login {
+    color: white;
+    font-size: 50px;
+    margin: 50px;
 }
 
-.signup {
-    color: #72808e;
+#signup {
+    color: white;
+    font-size: 50px;
+    margin: 50px;
+    
 }
