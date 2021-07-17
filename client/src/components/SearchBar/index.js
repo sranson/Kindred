@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
                                 <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" value="music" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Music</a></li>
                                     <li><a className="dropdown-item" value="movies" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Movies</a></li>
-                                    <li><a className="dropdown-item" value="tvShows" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>TV Shows</a></li>
+                                    <li><a className="dropdown-item" value="tvShows" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Series</a></li>
                                     <li><a className="dropdown-item" value="podcasts" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Podcasts</a></li>
                                     <li><a className="dropdown-item" value="books" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Books</a></li>
                                     <li><a className="dropdown-item" value="authors" onClick={(e) => this.setState({ searchCategory: e.target.outerText })}>Authors</a></li>
