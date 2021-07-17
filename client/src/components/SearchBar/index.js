@@ -10,11 +10,12 @@ class SearchBar extends React.Component {
   onSearchBtnClick = () => {
     let term = this.state.searchTerm;
     let category = this.state.searchCategory;
-    console.log(`Category: ${category}`);
-    console.log(`Search Term: ${term}`);
-    axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
+    // console.log(`Category: ${category}`);
+    // console.log(`Search Term: ${term}`);
+
+
+    // Tastedive API call to get similar results
+    axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
         {
           params: {
             q: term,
@@ -36,6 +37,28 @@ class SearchBar extends React.Component {
       .catch((err) => {
         console.log(err);
       });
+
+      // Web Search (imageSearch) API call to get images
+      let images = {
+        method: 'GET',
+        url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI',
+        params: {
+          q: term, 
+          pageNumber: '1', 
+          pageSize: '1', 
+          autoCorrect: 'true'},
+        headers: {
+          'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
+          'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+        }
+      };
+      axios.request(images).then(function (response) {
+        // console.log(response.data);
+        console.log(response.data.value[0].thumbnail);
+      }).catch(function (error) {
+        console.error(error);
+      });
+
     this.setState({ searchTerm: "" }); // Clear out the input text after 'Search' button is clicked
   };
 
