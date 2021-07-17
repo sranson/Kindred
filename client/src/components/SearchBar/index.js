@@ -28,7 +28,10 @@ class SearchBar extends React.Component {
         }
       )
       .then((results) => {
-        console.log(results);
+        let searchedForItem = results.data.Similar.Info[0]
+        let similaritiesArray = results.data.Similar.Results
+        console.log(searchedForItem);
+        console.log(similaritiesArray);
       })
       .catch((err) => {
         console.log(err);
@@ -80,7 +83,7 @@ class SearchBar extends React.Component {
               <li>
                 <a
                   className="dropdown-item"
-                  onClick={(e) => this.setState({ searchCategory: "Podcasts" })}
+                  onClick={(e) => this.setState({ searchCategory: "podcasts" })}
                 >
                   Podcasts
                 </a>
