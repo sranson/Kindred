@@ -29,7 +29,7 @@ const NavBar = () => {
                 <NavLink
                   className="nav-link"
                   exact
-                  to="/"
+                  to="/profile"
                   activeStyle={{ fontWeight: "bold" }}
                 >
                   Profile

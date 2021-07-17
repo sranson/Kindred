@@ -1,0 +1,32 @@
+main {
+    background: #bddac8;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.title {
+    font-family: 'Odibee Sans';
+    font-size: 200px;
+    color: #152c43;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: 'Mr Dafoe';
+    font-size: 50px;
+    color: #152c43;
+    text-align: center;
+}
+
+#login {
+    color: white;
+    font-size: 50px;
+    margin: 50px;
+}
+
+#signup {
+    color: white;
+    font-size: 50px;
+    margin: 50px;
+    
+}
