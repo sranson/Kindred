@@ -5,30 +5,35 @@ import "./SearchBar.css";
 class SearchBar extends React.Component {
   state = { searchTerm: "", searchCategory: "" };
 
+  state = { searchTerm: "", searchCategory: "" };
+
   onSearchBtnClick = () => {
-    // Make the call to tastedive api
     let term = this.state.searchTerm;
     let category = this.state.searchCategory;
-
+    console.log(`Category: ${category}`);
+    console.log(`Search Term: ${term}`);
     axios
       .get(
-        "https://cors-anywhere.herokuapp.com/http://tastedive.com/api/similar?",
+        "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
         {
           params: {
             q: term,
             type: category,
             info: 1,
-            limit: 5,
+            limit: 10,
           },
           headers: {
             Authorization: "",
           },
         }
       )
-      .then((data) => {
-        const categoryData = data;
-        
+      .then((results) => {
+        console.log(results);
+      })
+      .catch((err) => {
+        console.log(err);
       });
+    this.setState({ searchTerm: "" }); // Clear out the input text after 'Search' button is clicked
   };
 
   render() {
@@ -45,25 +50,21 @@ class SearchBar extends React.Component {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown
+              {this.state.searchCategory.toUpperCase()}
             </button>
             <ul className="dropdown-menu">
               <li>
                 <a
                   className="dropdown-item"
-                  value="music"
-                  onClick={(e) =>
-                    this.setState({ searchCategory: e.target.outerText })
-                  }
-                ></a>
+                  onClick={(e) => this.setState({ searchCategory: "Music" })}
+                >
+                  Music
+                </a>
               </li>
               <li>
                 <a
                   className="dropdown-item"
-                  value="movies"
-                  onClick={(e) =>
-                    this.setState({ searchCategory: e.target.outerText })
-                  }
+                  onClick={(e) => this.setState({ searchCategory: "Movies" })}
                 >
                   Movies
                 </a>
@@ -71,21 +72,15 @@ class SearchBar extends React.Component {
               <li>
                 <a
                   className="dropdown-item"
-                  value="tvShows"
-                  onClick={(e) =>
-                    this.setState({ searchCategory: e.target.outerText })
-                  }
+                  onClick={(e) => this.setState({ searchCategory: "shows" })}
                 >
-                  Series
+                  Shows
                 </a>
               </li>
               <li>
                 <a
                   className="dropdown-item"
-                  value="podcasts"
-                  onClick={(e) =>
-                    this.setState({ searchCategory: e.target.outerText })
-                  }
+                  onClick={(e) => this.setState({ searchCategory: "Podcasts" })}
                 >
                   Podcasts
                 </a>
@@ -93,10 +88,7 @@ class SearchBar extends React.Component {
               <li>
                 <a
                   className="dropdown-item"
-                  value="books"
-                  onClick={(e) =>
-                    this.setState({ searchCategory: e.target.outerText })
-                  }
+                  onClick={(e) => this.setState({ searchCategory: "Books" })}
                 >
                   Books
                 </a>
@@ -104,10 +96,7 @@ class SearchBar extends React.Component {
               <li>
                 <a
                   className="dropdown-item"
-                  value="authors"
-                  onClick={(e) =>
-                    this.setState({ searchCategory: e.target.outerText })
-                  }
+                  onClick={(e) => this.setState({ searchCategory: "Authors" })}
                 >
                   Authors
                 </a>
@@ -115,10 +104,7 @@ class SearchBar extends React.Component {
               <li>
                 <a
                   className="dropdown-item"
-                  value="games"
-                  onClick={(e) =>
-                    this.setState({ searchCategory: e.target.outerText })
-                  }
+                  onClick={(e) => this.setState({ searchCategory: "Games" })}
                 >
                   Games
                 </a>
@@ -146,5 +132,4 @@ class SearchBar extends React.Component {
     );
   }
 }
-
 export default SearchBar;
