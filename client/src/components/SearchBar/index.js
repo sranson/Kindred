@@ -8,9 +8,7 @@ class SearchBar extends React.Component {
  state = { searchTerm: '', searchCategory: ''};
 
  onSearchBtnClick = () => {
-    // What needs to happen when the search button is clicked? Make the call to tastedive api
-    // console.log(this.state.searchCategory);
-    // console.log(this.state.searchTerm);
+    // Make the call to tastedive api
     let term = this.state.searchTerm;
     let category = this.state.searchCategory;
 
