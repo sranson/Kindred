@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+main {
+    background: #bddac8;
+}
+
+.title {
+    font-family: 'Odibee Sans';
+    font-size: large;
+    color: #152c43;
+}
+
+.subtitle {
+    font-family: 'Mr. Dafoe';
+    font-size: medium;
+    color: #152c43;
+}
+
+.login {
+    border: 5px;
+    color: #72808e;
+}
+
+.signup {
+    color: #72808e;
+}
