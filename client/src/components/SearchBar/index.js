@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Card from '../Card'
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
@@ -29,35 +30,42 @@ class SearchBar extends React.Component {
         }
       )
       .then((results) => {
-        let searchedForItem = results.data.Similar.Info[0]
-        let similaritiesArray = results.data.Similar.Results
-        console.log(searchedForItem);
-        console.log(similaritiesArray);
+        // let searchTerm = results.data.Similar.Info[0]
+        let searchTermTitle = results.data.Similar.Info[0].Name
+        let searchTermDescription = results.data.Similar.Info[0].wTeaser.substring(0, 100)
+        let searchTermWiky = results.data.Similar.Info[0].wUrl
+        // let similaritiesArray = results.data.Similar.Results
+        // console.log(searchTerm);
+        console.log(searchTermTitle);
+        console.log(searchTermDescription);
+        console.log(searchTermWiky);
+        // console.log(similaritiesArray);
       })
       .catch((err) => {
         console.log(err);
       });
 
       // Web Search (imageSearch) API call to get images
-      let images = {
-        method: 'GET',
-        url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI',
-        params: {
-          q: term, 
-          pageNumber: '1', 
-          pageSize: '1', 
-          autoCorrect: 'true'},
-        headers: {
-          'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
-          'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-        }
-      };
-      axios.request(images).then(function (response) {
-        // console.log(response.data);
-        console.log(response.data.value[0].thumbnail);
-      }).catch(function (error) {
-        console.error(error);
-      });
+      // let images = {
+      //   method: 'GET',
+      //   url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI',
+      //   params: {
+      //     q: term, 
+      //     pageNumber: '1', 
+      //     pageSize: '1', 
+      //     autoCorrect: 'true'},
+      //   headers: {
+      //     'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
+      //     'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+      //   }
+      // };
+      // axios.request(images).then(function (response) {
+      //   // console.log(response.data);
+      //   let targetImage = response.data.value[0].thumbnail;
+      //   console.log(targetImage);
+      // }).catch(function (error) {
+      //   console.error(error);
+      // });
 
     this.setState({ searchTerm: "" }); // Clear out the input text after 'Search' button is clicked
   };
@@ -154,6 +162,7 @@ class SearchBar extends React.Component {
             </div>
           </div>
         </div>
+        {/* <Card image={targetImage} title={searchTermTitle} description={searchTermDescription} moreInfo={searchTermWiky}/> */}
       </div>
     );
   }
