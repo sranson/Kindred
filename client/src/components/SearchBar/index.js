@@ -11,12 +11,21 @@ class SearchBar extends React.Component {
     // What needs to happen when the search button is clicked? Make the call to tastedive api
     // console.log(this.state.searchCategory);
     // console.log(this.state.searchTerm);
-    // https://tastedive.com/api/similar?q=breaking+bad&type=shows&info=1&limit=5
-    // axios.get('https://tastedive.com/api/similar?q='+this.state.searchTerm+'&type='+this.state.searchCategory+'&info=1&limit=5', {});
-    axios.get('https://tastedive.com/api/similar?q=insecure&type=shows&info=1&limit=5', {
-        params: {},
-        headers: {}
-    });
+    let term = this.state.searchTerm;
+    let category = this.state.searchCategory;
+
+    axios.get('http://tastedive.com/api/similar?', {
+        params: {
+            q: term,
+            type: category,
+            info: 1,
+            limit: 5,
+            k: '419186-Similari-8DTISBRP'
+        },
+        headers: {
+            Authorization: ''
+        }
+    })
  }
 
     render() {
