@@ -1,76 +1,20 @@
 import React from "react";
-import axios from "axios";
-import Card from '../Card'
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
   state = { 
     searchTerm: "", 
     searchCategory: "",
-    searchedForDescrip: "",
-    searchedTitle: "",
-    searchedForWiky: "",
-    searchedImage: "",
-    similarities: [] 
   };
 
   onSearchBtnClick = () => {
     let term = this.state.searchTerm;
     let category = this.state.searchCategory;
-
-
-    // Tastedive API call to get similar results
-    axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
-        {
-          params: {
-            q: term,
-            type: category,
-            info: 1,
-            limit: 9,
-          },
-          headers: {
-            Authorization: "",
-          },
-        }
-      )
-      .then((results) => {
-        this.setState({ searchedTitle: results.data.Similar.Info[0].Name })
-        this.setState({ searchedForDescrip: results.data.Similar.Info[0].wTeaser.substring(0, 100) })
-        this.setState({ searchedForWiky: results.data.Similar.Info[0].wUrl })
-        this.setState({ similarities: results.data.Similar.Results })
-        console.log(this.state.similarities);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-
-    axios.get("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
-      {
-        params: {
-          q: term, 
-          pageNumber: '1', 
-          pageSize: '1', 
-          autoCorrect: 'true'},
-        headers: {
-          'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
-          'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-        }
-      }
-    )
-    .then((response) => {
-        // console.log(response.data.value[0].thumbnail);
-        this.setState({ searchedImage: response.data.value[0].thumbnail })
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-
+    this.props.onSearchBtnClick(term, category)
     this.setState({ searchTerm: "" }); // Clear out the input text after 'Search' button is clicked
   };
 
-  render() {
+    render() {
       return (
         <div>
           <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }} >
@@ -95,10 +39,9 @@ class SearchBar extends React.Component {
               </div>
             </div>
           </div>
-          <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/> 
         </div>
-      ); // End of return statement
-  }  // End of render methis
+      );
+    } 
 }
 
 
@@ -108,3 +51,52 @@ export default SearchBar;
 
 
 
+{/* <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>  */}
+
+
+// // Tastedive API call to get similar results
+// axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
+// {
+//   params: {
+//     q: term,
+//     type: category,
+//     info: 1,
+//     limit: 9,
+//   },
+//   headers: {
+//     Authorization: "",
+//   },
+// }
+// )
+// .then((results) => {
+// this.setState({ searchedTitle: results.data.Similar.Info[0].Name })
+// this.setState({ searchedForDescrip: results.data.Similar.Info[0].wTeaser.substring(0, 100) })
+// this.setState({ searchedForWiky: results.data.Similar.Info[0].wUrl })
+// this.setState({ similarities: results.data.Similar.Results })
+// console.log(this.state.similarities);
+// })
+// .catch((err) => {
+// console.log(err);
+// });
+
+
+// axios.get("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
+// {
+// params: {
+//   q: term, 
+//   pageNumber: '1', 
+//   pageSize: '1', 
+//   autoCorrect: 'true'},
+// headers: {
+//   'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
+//   'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+// }
+// }
+// )
+// .then((response) => {
+// // console.log(response.data.value[0].thumbnail);
+// this.setState({ searchedImage: response.data.value[0].thumbnail })
+// })
+// .catch((err) => {
+// console.log(err);
+// });

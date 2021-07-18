@@ -1,0 +1,83 @@
+import React from 'react';
+import axios from 'axios';
+import SearchBar from '../components/SearchBar';
+import Card from '../components/Card'
+
+
+class SearchResultScreen extends React.Component {
+    state = { 
+        searchedTitle: "",
+        searchedForDescrip: "",
+        searchedForWiky: "",
+        searchedImage: "",
+        similarities: [] 
+      };
+
+    onSearchSubmit = (term, category) => {
+        console.log(`Term: ${term}`);
+        console.log(`Category: ${category}`);
+
+        // Tastedive API call to get similar results
+    axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
+        {
+        params: {
+            q: term,
+            type: category,
+            info: 1,
+            limit: 9,
+        },
+        headers: {
+            Authorization: "",
+        },
+        }
+    ).then((results) => {
+        this.setState({ searchedTitle: results.data.Similar.Info[0].Name })
+        this.setState({ searchedForDescrip: results.data.Similar.Info[0].wTeaser.substring(0, 100) })
+        this.setState({ searchedForWiky: results.data.Similar.Info[0].wUrl })
+        this.setState({ similarities: results.data.Similar.Results })
+        console.log(this.state.similarities);
+    }).catch((err) => {
+        console.log(err);
+    });
+
+
+    axios.get("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
+        {
+            params: {
+                q: term, 
+                pageNumber: '1', 
+                pageSize: '1', 
+                autoCorrect: 'true'},
+                headers: {
+                'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
+                'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+            }
+        }).then((response) => {
+            // console.log(response.data.value[0].thumbnail);
+            this.setState({ searchedImage: response.data.value[0].thumbnail })
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    render() {
+        if (!this.state.searchedImage) {
+            return (
+                <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>            
+                    <SearchBar onSearchBtnClick={this.onSearchSubmit} />
+                </div>    
+            )
+        }
+        if (this.state.searchedImage) {
+            return (
+            <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
+                <SearchBar onSearchBtnClick={this.onSearchSubmit} />
+                <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+            </div>
+            )
+        }
+    }
+}
+
+
+export default SearchResultScreen;
