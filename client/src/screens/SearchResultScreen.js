@@ -24,7 +24,7 @@ class SearchResultScreen extends React.Component {
             q: term,
             type: category,
             info: 1,
-            limit: 9,
+            limit: 8,
         },
         headers: {
             Authorization: "",
@@ -73,6 +73,15 @@ class SearchResultScreen extends React.Component {
             <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
                 <SearchBar onSearchBtnClick={this.onSearchSubmit} />
                 <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+                <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
+                        {this.state.similarities.map((result) => {
+                            return (
+                                <div className="col-md-3" style={{ marginBottom: "3%" }}>
+                                    <Card image={this.state.searchedImage} title={result.Name} description={result.wTeaser.substring(0, 100)} moreInfo={result.wUrl}/>
+                                </div>
+                            )
+                        })}
+                </div>
             </div>
             )
         }
@@ -81,3 +90,17 @@ class SearchResultScreen extends React.Component {
 
 
 export default SearchResultScreen;
+
+
+{/* <div className="col-md-3">
+<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+</div>
+<div className="col-md-3">
+<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+</div>
+<div className="col-md-3">
+<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+</div>
+<div className="col-md-3">
+<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+</div> */}

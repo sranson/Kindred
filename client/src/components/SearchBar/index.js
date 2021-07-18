@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
                 <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Movies" })}>Movies</a></li>
                 <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "shows" })}>Shows</a></li>
                 <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "podcasts" })}>Podcasts</a></li>
-                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Books" })}>Books</a></li>
+                <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "books" })}>Books</a></li>
                 <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Authors" })}>Authors</a></li>
                 <li><a className="dropdown-item" onClick={(e) => this.setState({ searchCategory: "Games" })}>Games</a></li>
               </ul>
@@ -48,55 +48,3 @@ class SearchBar extends React.Component {
 
 
 export default SearchBar;
-
-
-
-{/* <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>  */}
-
-
-// // Tastedive API call to get similar results
-// axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
-// {
-//   params: {
-//     q: term,
-//     type: category,
-//     info: 1,
-//     limit: 9,
-//   },
-//   headers: {
-//     Authorization: "",
-//   },
-// }
-// )
-// .then((results) => {
-// this.setState({ searchedTitle: results.data.Similar.Info[0].Name })
-// this.setState({ searchedForDescrip: results.data.Similar.Info[0].wTeaser.substring(0, 100) })
-// this.setState({ searchedForWiky: results.data.Similar.Info[0].wUrl })
-// this.setState({ similarities: results.data.Similar.Results })
-// console.log(this.state.similarities);
-// })
-// .catch((err) => {
-// console.log(err);
-// });
-
-
-// axios.get("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
-// {
-// params: {
-//   q: term, 
-//   pageNumber: '1', 
-//   pageSize: '1', 
-//   autoCorrect: 'true'},
-// headers: {
-//   'x-rapidapi-key': 'hkT3WheP81mshG7OUzxBABskhgYrp1Ew0AhjsnNEADHzJY8mIY',
-//   'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-// }
-// }
-// )
-// .then((response) => {
-// // console.log(response.data.value[0].thumbnail);
-// this.setState({ searchedImage: response.data.value[0].thumbnail })
-// })
-// .catch((err) => {
-// console.log(err);
-// });
