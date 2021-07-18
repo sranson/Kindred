@@ -13,7 +13,10 @@ const SimilarResultCard = (props) => {
               <div className="card-body">
                   <h5 className="card-title">{props.title}</h5>
                   <p className="card-text">{props.description}...</p>
-                  <a href={props.moreInfo} target="_blank" className="btn btn-primary">Read More</a>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <a href={props.moreInfo} target="_blank" className="btn btn-primary">Read More</a>
+                        <a href="#" target="_blank" className="btn btn-primary">Save</a>
+                  </div>
               </div>
             </div>
         </div>
@@ -25,7 +28,10 @@ const SimilarResultCard = (props) => {
               <div className="card-body">
                   <h5 className="card-title">{props.title}</h5>
                   <p className="card-text">{props.description}...</p>
-                  <a href={props.moreInfo} target="_blank" className="btn btn-primary">Read More</a>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <a href={props.moreInfo} target="_blank" className="btn btn-primary">Read More</a>
+                        <a href="#" target="_blank" className="btn btn-primary">Save</a>
+                  </div>
               </div>
             </div>
         </div>
