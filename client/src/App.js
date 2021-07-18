@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 import Home from './components/Home/index';
+import Login from './components/Login/index';
 import Profile from './components/Profile';
 import SearchBar from './components/SearchBar';
 import Matches from './components/Matches';
@@ -22,6 +23,9 @@ function App() {
               <Home />
             </Route>
             <NavBar />
+            <Route exact path="/login">
+              <Login />
+            </Route>
             <Route exact path="/profile">
               <Profile />
             </Route>
