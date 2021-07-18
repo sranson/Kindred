@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import Card from '../components/Card'
+import SimilarResultCard from '../components/Card/SimilarResultCard'
 
 
 class SearchResultScreen extends React.Component {
@@ -40,7 +41,6 @@ class SearchResultScreen extends React.Component {
         console.log(err);
     });
 
-
     axios.get("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
         {
             params: {
@@ -77,7 +77,7 @@ class SearchResultScreen extends React.Component {
                         {this.state.similarities.map((result) => {
                             return (
                                 <div className="col-md-3" style={{ marginBottom: "3%" }}>
-                                    <Card image={this.state.searchedImage} title={result.Name} description={result.wTeaser.substring(0, 100)} moreInfo={result.wUrl}/>
+                                    <SimilarResultCard title={result.Name} description={result.wTeaser.substring(0, 100)} moreInfo={result.wUrl}/>
                                 </div>
                             )
                         })}
@@ -90,17 +90,3 @@ class SearchResultScreen extends React.Component {
 
 
 export default SearchResultScreen;
-
-
-{/* <div className="col-md-3">
-<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
-</div>
-<div className="col-md-3">
-<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
-</div>
-<div className="col-md-3">
-<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
-</div>
-<div className="col-md-3">
-<Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
-</div> */}
