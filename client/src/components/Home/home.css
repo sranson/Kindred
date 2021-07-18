@@ -4,14 +4,14 @@ main {
     height: 100vh;
 }
 
-.title {
+.mainTitle {
     font-family: 'Odibee Sans';
     font-size: 200px;
     color: #152c43;
     text-align: center;
 }
 
-.subtitle {
+.mainSubTitle {
     font-family: 'Mr Dafoe';
     font-size: 50px;
     color: #152c43;
