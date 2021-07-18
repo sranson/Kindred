@@ -15,10 +15,7 @@ class SearchResultScreen extends React.Component {
       };
 
     onSearchSubmit = (term, category) => {
-        console.log(`Term: ${term}`);
-        console.log(`Category: ${category}`);
-
-        // Tastedive API call to get similar results
+    // Tastedive API call to get similar results
     axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
         {
         params: {
@@ -77,7 +74,7 @@ class SearchResultScreen extends React.Component {
                         {this.state.similarities.map((result) => {
                             return (
                                 <div className="col-md-3" style={{ marginBottom: "3%" }}>
-                                    <SimilarResultCard title={result.Name} description={result.wTeaser.substring(0, 100)} moreInfo={result.wUrl}/>
+                                    <SimilarResultCard video={result.yUrl} title={result.Name} description={result.wTeaser.substring(0, 100)} moreInfo={result.wUrl}/>
                                 </div>
                             )
                         })}
