@@ -2,17 +2,34 @@
     background-color: #BDE2CB;
     height: 100vh;
     color:#152C43;
+    overflow: hidden;
 }
 
 .profileHeader {
+    padding-left: 20px;
+    padding-top: 10px;
     display: flex;
     flex-wrap: nowrap;
-    padding-left: 30px;
-    padding-top: 10px;
+}
+
+.profPic {
+    background-size:cover;
+    border-radius:50%;
+    height:100px;
+    width: 100px;
+    margin-right: 5px;
 }
 
 .username {
     font-size: 1.75rem;
+    align-self: center;
+}
+
+.about {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .content {

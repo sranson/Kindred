@@ -30,9 +30,9 @@ class Collapsible extends React.Component {
 const Profile = () => {
     return(
         <div className="profile">
-            <div className="row profileHeader">
-                <div className="profPic col-xs-2" style={{backgroundImage:'url(https://pbs.twimg.com/profile_images/1047268283374850050/OBy8k6AX_400x400.jpg)'}}></div>
-                <h3 className="username col-xs-5">DonkeyKongFan</h3>
+            <div className="profileHeader">
+                <div className="profPic" style={{backgroundImage:'url(https://pbs.twimg.com/profile_images/1047268283374850050/OBy8k6AX_400x400.jpg)'}}></div>
+                <h3 className="username">DonkeyKongFan</h3>
             </div>
             <div className="about">I just really love Dankey Kang</div>
             <div className="interests">

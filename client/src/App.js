@@ -18,14 +18,14 @@ function App() {
         <div>
           <div>
             {/* Define routes to render different page components at different paths */}
-            {/* <Route exact path="/">
+            <Route exact path="/">
               <Home />
-            </Route> */}
+            </Route>
             <NavBar />
             <Route exact path="/profile">
               <Profile />
             </Route>
-            {/* <Route exact path="/search">
+            <Route exact path="/search">
               <SearchBar />
             </Route>
             <Route exact path="/matches">
@@ -33,7 +33,7 @@ function App() {
             </Route>
             <Route exact path="/settings">
               <Settings />
-            </Route> */}
+            </Route>
           </div>
         </div>
       </Switch>
