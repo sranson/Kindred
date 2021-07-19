@@ -12,6 +12,7 @@ const typeDefs = gql`
     categoryId: ID!
     title: String!
     type: String!
+    image: String!
     description: String!
     wikiUrl: String
   }
@@ -25,9 +26,9 @@ const typeDefs = gql`
     categoryId: ID!
     title: String
     type: String
+    image: String
     description: String
     wikiUrl: String
-    youtubeUrl: String
   }
 
   type Query {
