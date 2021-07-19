@@ -39,6 +39,19 @@ const resolvers = {
 
       return { token, user };
     },
+
+    saveCategory: async (parent, { categoryData }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedCategories: categoryData } },
+          { new: true, runValidators: true }
+        );
+        return updatedUser;
+      }
+      // If user attempts to execute this mutation and isn't logged in, throw an error
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
