@@ -1,0 +1,66 @@
+[
+    {
+      "username": "sranson",
+      "email": "sransonn@gmail.com",
+      "password": "password01",
+      "savedCategories": [
+        {
+          "title": "Beyonce",
+          "type": "music",
+          "image": "link",
+          "description": "Beyoncé Giselle Knowles-Carter ( bee-YON-say; born September 4, 1981) is an American singer, songwriter, record producer, and actress. Born and raised in Houston, Texas, Beyoncé performed in various singing and dancing competitions as a child. She rose to fame in the late 1990s as the lead singer of Destiny's Child, one of the best-selling girl groups of all time.",
+          "wikiUrl": "http://en.wikipedia.org/wiki/Beyonc%C3%A9_Knowles"
+        }
+      ]
+    },
+    {
+      "username": "braxb",
+      "email": "braxb@gmail.com",
+      "password": "password02",
+      "savedCategories": [
+        {
+            "title": "Sula",
+            "type": "book",
+            "image": "link",
+            "description": "Sula is a 1973 novel by Nobel Prize-winning author Toni Morrison, her second to be published after The Bluest Eye (1970).",
+            "wikiUrl": "http://en.wikipedia.org/wiki/Sula_(novel)"
+        },
+        {
+            "title": "League of Legends",
+            "type": "game",
+            "image": "link",
+            "description": "League of Legends (LoL), commonly referred to as League, is a 2009 multiplayer online battle arena video game developed and published by Riot Games. Inspired by Defense of the Ancients, a custom map for Warcraft III, Riot's founders sought to develop a stand-alone game in the same genre.",
+            "wikiUrl": "http://en.wikipedia.org/wiki/League_of_Legends"
+        }
+      ]
+    },
+    {
+      "username": "klucas72",
+      "email": "klucas72@gmail.com",
+      "password": "password03",
+      "savedCategories": [
+        {
+            "title": "Finding Nemo",
+            "type": "movie",
+            "image": "link",
+            "description": "Finding Nemo is a 2003 American computer-animated adventure film produced by Pixar Animation Studios and released by Walt Disney Pictures. Directed and co-written by Andrew Stanton with co-direction by Lee Unkrich, the screenplay was written by Bob Peterson, David Reynolds, and Stanton from a story by Stanton. The film stars the voices of Albert Brooks, Ellen DeGeneres, Alexander Gould, and Willem Dafoe.",
+            "wikiUrl": "http://en.wikipedia.org/wiki/Finding_Nemo"
+        }
+      ]
+    },
+    {
+      "username": "kroh1031",
+      "email": "kroh1031@gmail.com",
+      "password": "password04",
+      "savedCategories": [
+        {
+            "title": "George Orwell",
+            "type": "author",
+            "image": "link",
+            "description": "Eric Arthur Blair (25 June 1903 – 21 January 1950), known by his pen name George Orwell, was an English novelist, essayist, journalist and critic. His work is characterised by lucid prose, biting social criticism, opposition to totalitarianism, and outspoken support of democratic socialism.",
+            "wikiUrl": "http://en.wikipedia.org/wiki/George_Orwell"
+        }
+      ]
+    }
+  ]
+  
