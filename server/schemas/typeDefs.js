@@ -23,7 +23,7 @@ const typeDefs = gql`
   }
 
   input saveCategoryInput {
-    categoryId: ID!
+    categoryId: ID
     title: String
     type: String
     image: String
@@ -33,7 +33,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    sayHi: String
+    users: [User]
   }
 
   type Mutation {
