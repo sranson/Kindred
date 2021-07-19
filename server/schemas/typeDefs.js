@@ -10,11 +10,10 @@ const typeDefs = gql`
 
   type Category {
     categoryId: ID!
-    title: String
-    type: String
-    description: String
+    title: String!
+    type: String!
+    description: String!
     wikiUrl: String
-    youtubeUrl: String
   }
 
   type Auth {
@@ -33,6 +32,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    sayHi: String
   }
 
   type Mutation {
