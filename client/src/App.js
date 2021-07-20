@@ -10,6 +10,8 @@ import { setContext } from "@apollo/client/link/context";
 
 import NavBar from "./components/NavBar";
 import Home from "./components/Home/index";
+import Login from "./components/Login/index";
+import Signup from "./components/Signup/index";
 import Profile from "./components/Profile";
 import SearchBar from "./components/SearchBar";
 import Matches from "./components/Matches";
@@ -47,25 +49,29 @@ function App() {
       <Router>
         <Switch>
           <div>
-            <div>
-              {/* Define routes to render different page components at different paths */}
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <NavBar />
-              <Route exact path="/profile">
-                <Profile />
-              </Route>
-              <Route exact path="/search">
-                <SearchBar />
-              </Route>
-              <Route exact path="/matches">
-                <Matches />
-              </Route>
-              <Route exact path="/settings">
-                <Settings />
-              </Route>
-            </div>
+            {/* Define routes to render different page components at different paths */}
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <NavBar />
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/search">
+              <SearchBar />
+            </Route>
+            <Route exact path="/matches">
+              <Matches />
+            </Route>
+            <Route exact path="/settings">
+              <Settings />
+            </Route>
           </div>
         </Switch>
       </Router>
