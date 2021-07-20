@@ -59,17 +59,20 @@ function App() {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <NavBar />
             <Route exact path="/profile">
+              <NavBar />
               <Profile />
             </Route>
             <Route exact path="/search">
+              <NavBar />
               <SearchResultScreen />
             </Route>
             <Route exact path="/matches">
+              <NavBar />
               <Matches />
             </Route>
             <Route exact path="/settings">
+              <NavBar />
               <Settings />
             </Route>
           </div>

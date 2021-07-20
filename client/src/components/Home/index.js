@@ -12,10 +12,10 @@ export default function Login() {
                 <p>Spark an Interest</p>
             </p>
             <div className="d-grid gap-2">
-                <Button id='login' variant="secondary" size="lg">
+                <Button id='login' variant="secondary" size="lg" href="/login">
                     Login
                 </Button>
-                <Button id='signup' variant="secondary" size="lg">
+                <Button id='signup' variant="secondary" size="lg" href="/signup">
                     Sign Up
                 </Button>
             </div>
