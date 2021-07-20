@@ -7,7 +7,7 @@ import Home from './components/Home/index';
 import Login from './components/Login/index';
 import Signup from './components/Signup/index';
 import Profile from './components/Profile';
-import SearchBar from './components/SearchBar';
+import SearchResultScreen from './screens/SearchResultScreen';
 import Matches from './components/Matches';
 import Settings from './components/Settings'
 import './App.css';
@@ -34,7 +34,7 @@ function App() {
               <Profile />
             </Route>
             <Route exact path="/search">
-              <SearchBar />
+              <SearchResultScreen />
             </Route>
             <Route exact path="/matches">
               <Matches />
