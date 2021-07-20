@@ -10,11 +10,12 @@ const typeDefs = gql`
 
   type Category {
     categoryId: ID!
-    title: String!
-    type: String!
-    image: String!
-    description: String!
+    title: String
+    type: String
+    image: String
+    description: String
     wikiUrl: String
+    youtubeUrl: String
   }
 
   type Auth {
@@ -29,6 +30,7 @@ const typeDefs = gql`
     image: String
     description: String
     wikiUrl: String
+    youtubeUrl: String
   }
 
   type Query {

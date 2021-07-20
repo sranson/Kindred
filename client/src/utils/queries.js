@@ -15,6 +15,7 @@ export const QUERY_ME = gql`
         image
         description
         wikiUrl
+        youtubeUrl
       }
     }
   }
@@ -32,6 +33,7 @@ export const QUERY_USERS = gql`
         image
         description
         wikiUrl
+        youtubeUrl
       }
     }
   }

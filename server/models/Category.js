@@ -16,6 +16,9 @@ const categorySchema = new Schema({
   wikiUrl: {
     type: String,
   },
+  youtubeUrl: {
+    type: String,
+  },
 });
 
 module.exports = categorySchema;

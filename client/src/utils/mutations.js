@@ -46,6 +46,7 @@ export const SAVE_CATEGORY = gql`
         image
         description
         wikiUrl
+        youtubeUrl
       }
     }
   }
@@ -64,6 +65,7 @@ const REMOVE_CATEGORY = gql`
         image
         description
         wikiUrl
+        youtubeUrl
       }
     }
   }
