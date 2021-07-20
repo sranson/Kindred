@@ -1,15 +1,15 @@
 import React from 'react';
-import './login.css'
+import './signup.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 
 export default function Login() {
     return (
         <main className='main'>
-            <h1 className='loginTitle'>
+            <h1 className='signUpTitle'>
                 <p>Kindred</p>
             </h1>
-            <p className='loginSubTitle'>
+            <p className='signUpSubTitle'>
                 <p>Spark an Interest</p>
             </p>
             <div>
@@ -18,6 +18,14 @@ export default function Login() {
                         <Form.Label>Username</Form.Label>
                         <Form.Control id='inputUser' type="username" placeholder="Enter username" />
                     </Form.Group>
+                    <Form.Group id='email' className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control id='inputEmail' type="email" placeholder="Enter email" />
+                        <Form.Text id='warning' className="text-muted">
+                            We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
+
                     <Form.Group id='password' className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control id='inputPassword' type="password" placeholder="Password" />
@@ -25,8 +33,8 @@ export default function Login() {
                 </Form>
             </div>
             <div id='button' className="d-grid gap-2">
-                <Button id='login' variant="secondary" size="lg">
-                    Login
+                <Button variant="secondary" size="lg">
+                    Sign Up
                 </Button>
             </div>
         </main>
