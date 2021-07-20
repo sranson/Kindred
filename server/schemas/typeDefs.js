@@ -12,6 +12,7 @@ const typeDefs = gql`
     categoryId: ID!
     title: String
     type: String
+    image: String
     description: String
     wikiUrl: String
     youtubeUrl: String
@@ -23,9 +24,10 @@ const typeDefs = gql`
   }
 
   input saveCategoryInput {
-    categoryId: ID!
+    categoryId: ID
     title: String
     type: String
+    image: String
     description: String
     wikiUrl: String
     youtubeUrl: String
@@ -33,6 +35,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    users: [User]
   }
 
   type Mutation {
