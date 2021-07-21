@@ -4,6 +4,7 @@ import { Form, Button } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 export default function Signup() {
   // set initial form state
@@ -38,7 +39,7 @@ export default function Signup() {
         throw new Error("something went wrong!");
       }
 
-      // Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
       // setShowAlert(true);
