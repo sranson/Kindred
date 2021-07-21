@@ -15,6 +15,7 @@ class SearchResultScreen extends React.Component {
       };
 
     onSearchSubmit = (term, category) => {
+    this.setState({ searchedImage: "" })
     // Tastedive API call to get similar results
     axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
         {
