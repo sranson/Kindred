@@ -44,6 +44,12 @@ export default function Signup() {
       console.error(err);
       // setShowAlert(true);
     }
+
+    setValues({
+      username: "",
+      email: "",
+      password: "",
+    });
   };
 
   return (
