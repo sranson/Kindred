@@ -1,9 +1,6 @@
 {
   "name": "kindred",
   "version": "1.0.0",
-  "engines": {
-    "node": "14.x"
-  },
   "description": "Project 3",
   "main": "server/server.js",
   "dependencies": {
