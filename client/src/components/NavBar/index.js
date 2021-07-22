@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import Auth from "../../utils/auth";
 
 const NavBar = () => {
   return (
@@ -62,6 +63,14 @@ const NavBar = () => {
                   Settings
                 </NavLink>
               </li>
+              {/* <li className="nav-item">
+                <NavLink
+                  onClick={Auth.logout}
+                  // activeStyle={{ fontWeight: "bold" }}
+                >
+                  Logout
+                </NavLink>
+              </li> */}
             </ul>
           </div>
         </div>

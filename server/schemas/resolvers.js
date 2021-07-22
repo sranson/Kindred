@@ -47,6 +47,7 @@ const resolvers = {
     },
 
     saveCategory: async (parent, { categoryData }, context) => {
+      console.log(context);
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },

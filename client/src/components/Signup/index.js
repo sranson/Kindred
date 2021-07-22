@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./signup.css";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Spinner } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
@@ -19,7 +19,7 @@ export default function Signup() {
   };
 
   //executable ADD_USER mutation
-  const [addUser, { error }] = useMutation(ADD_USER, {
+  const [addUser, { loading }] = useMutation(ADD_USER, {
     update(proxy, result) {
       // console.log(result);
     },
@@ -65,6 +65,7 @@ export default function Signup() {
           <Form.Group id="username" className="mb-3" controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
             <Form.Control
+              required
               placeholder="Enter username"
               type="text"
               name="username"
@@ -75,6 +76,7 @@ export default function Signup() {
           <Form.Group id="email" className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
+              required
               type="email"
               placeholder="Your email address"
               name="email"
@@ -93,6 +95,7 @@ export default function Signup() {
           >
             <Form.Label>Password</Form.Label>
             <Form.Control
+              required
               type="password"
               placeholder="Your password"
               name="password"
