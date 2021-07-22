@@ -63,14 +63,6 @@ const NavBar = () => {
                   Settings
                 </NavLink>
               </li>
-              {/* <li className="nav-item">
-                <NavLink
-                  onClick={Auth.logout}
-                  // activeStyle={{ fontWeight: "bold" }}
-                >
-                  Logout
-                </NavLink>
-              </li> */}
             </ul>
           </div>
         </div>
