@@ -46,12 +46,11 @@ const resolvers = {
       return { token, user };
     },
 
-    saveCategory: async (parent, { categoryData }, context) => {
-      // console.log(context);
+    saveCategory: async (parent, { title, type, description, wikiUrl, youtubeUrl, image }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedCategories: categoryData } },
+          { $addToSet: { savedCategories: {title: title, type: type, description: description, wikiUrl: wikiUrl, youtubeUrl: youtubeUrl, image: image } } },
           { new: true, runValidators: true }
         );
         return updatedUser;
