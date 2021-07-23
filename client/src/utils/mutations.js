@@ -34,8 +34,8 @@ export const ADD_USER = gql`
 
 //saveCategory mutation
 export const SAVE_CATEGORY = gql`
-mutation saveCategory($title: String, $type: String, $description: String, $wikiUrl: String, $youtubeUrl: String) {
-  saveCategory(title: $title, type: $type, description: $description, wikiUrl: $wikiUrl, youtubeUrl: $youtubeUrl) {
+mutation saveCategory($title: String, $type: String, $description: String, $wikiUrl: String, $youtubeUrl: String, $image: String) {
+  saveCategory(title: $title, type: $type, description: $description, wikiUrl: $wikiUrl, youtubeUrl: $youtubeUrl, image: $image) {
     _id
     username
     email

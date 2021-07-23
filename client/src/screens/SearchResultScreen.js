@@ -72,7 +72,7 @@ class SearchResultScreen extends React.Component {
             return (
             <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
                 <SearchBar onSearchBtnClick={this.onSearchSubmit} />
-                <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+                <Card type={this.state.searchedType} image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
                 <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
                         {this.state.similarities.map((result) => {
                             return (

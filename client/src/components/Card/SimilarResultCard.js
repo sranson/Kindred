@@ -8,11 +8,6 @@ const SimilarResultCard = (props) => {
 
   const saveTheCategory = (e) => {
     e.preventDefault();
-    // console.log(props.title)                // This works
-    // console.log(props.type)
-    // console.log(props.description)          // This works
-    // console.log(props.moreInfo)             // This works
-    // console.log(props.video)                // This works
     try {
       saveCategory({
         variables: {
