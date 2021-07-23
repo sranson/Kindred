@@ -1,17 +1,11 @@
 const mongoose = require("mongoose");
 
-<<<<<<< HEAD
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/kindred",
-  {
-=======
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/kindred", {
->>>>>>> 408ef2863a3bd4e24932c79f344074b47d5893e5
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  }
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+}
 );
 
 module.exports = mongoose.connection;

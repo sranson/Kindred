@@ -92,15 +92,6 @@ function App() {
               <Route exact path="/signup">
                 <Signup />
               </Route>
-<<<<<<< HEAD
-              <Route exact path="/login">
-                <Login />
-              </Route>
-              <Route exact path="/signup">
-                <Signup />
-              </Route>
-=======
->>>>>>> 408ef2863a3bd4e24932c79f344074b47d5893e5
               <Route exact path="/profile">
                 <NavBar />
                 <Profile />
