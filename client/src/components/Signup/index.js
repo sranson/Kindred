@@ -33,7 +33,7 @@ export default function Signup() {
     try {
       const { data } = await addUser({ variables: { ...values } });
 
-      console.log(data);
+      // console.log(data);
 
       if (!data) {
         throw new Error("something went wrong!");

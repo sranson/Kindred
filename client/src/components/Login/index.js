@@ -32,7 +32,7 @@ export default function Login() {
     try {
       const { data } = await loginUser({ variables: { ...values } });
 
-      console.log(data);
+      // console.log(data);
 
       if (!data) {
         throw new Error("something went wrong!");
