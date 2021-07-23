@@ -17,11 +17,7 @@ export const LOGIN_USER = gql`
 
 //addUser mutation
 export const ADD_USER = gql`
-  mutation addSingleUser(
-    $username: String!
-    $email: String!
-    $password: String!
-  ) {
+  mutation addSingleUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
       token
       user {
@@ -40,7 +36,7 @@ mutation saveCategory($title: String, $type: String, $description: String, $wiki
     username
     email
     savedCategories {
-      categoryId
+      _id
       title
       type
       description

@@ -9,7 +9,7 @@ const typeDefs = gql`
   }
 
   type Category {
-    categoryId: ID!
+    _id: ID!
     title: String
     type: String
     image: String
