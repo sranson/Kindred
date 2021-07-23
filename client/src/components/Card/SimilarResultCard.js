@@ -3,11 +3,17 @@ import { useMutation } from '@apollo/client';
 import { SAVE_CATEGORY } from '../../utils/mutations';
 
 const SimilarResultCard = (props) => {
-  
+
   const [saveCategory] = useMutation(SAVE_CATEGORY);
+  const [text, setText] = useState("Save")
+
+  const changeBtnText = () => {
+    setText("SAVED!")
+  }
 
   const saveTheCategory = (e) => {
     e.preventDefault();
+    changeBtnText()
     try {
       saveCategory({
         variables: {
@@ -35,7 +41,7 @@ const SimilarResultCard = (props) => {
                   <p className="card-text">{props.description}...</p>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <a href={props.moreInfo} target="_blank" className="btn btn-primary">Read More</a>
-                        <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory}>Save</a>
+                        <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory}>{text}</a>
                   </div>
               </div>
             </div>
@@ -50,7 +56,7 @@ const SimilarResultCard = (props) => {
                   <p className="card-text">{props.description}...</p>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <a href={props.moreInfo} target="_blank" className="btn btn-primary">Read More</a>
-                        <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory}>Save</a>
+                        <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory}>{text}</a>
                   </div>
               </div>
             </div>
