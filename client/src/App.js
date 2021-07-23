@@ -13,12 +13,12 @@ import Home from "./components/Home/index";
 import Login from "./components/Login/index";
 import Signup from "./components/Signup/index";
 import Profile from "./components/Profile";
-import SearchResultScreen from './screens/SearchResultScreen';
+import SearchResultScreen from "./screens/SearchResultScreen";
 import Matches from "./components/Matches";
 import Settings from "./components/Settings";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Auth from "./utils/auth";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,82 +44,75 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
   if (!localStorage.getItem("id_token")) {
     return (
       <ApolloProvider client={client}>
         <Router>
-          <switch>
+          <Switch>
             <div>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-          <Route exact path="/profile">
-            <Login />
-          </Route>
-          <Route exact path="/search">
-            <Login />
-          </Route>
-          <Route exact path="/matches">
-            <Login />
-          </Route>
-          <Route exact path="/settings">
-            <Login />
-          </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/profile">
+                <Login />
+              </Route>
+              <Route exact path="/search">
+                <Login />
+              </Route>
+              <Route exact path="/matches">
+                <Login />
+              </Route>
+              <Route exact path="/settings">
+                <Login />
+              </Route>
             </div>
-          </switch>
+          </Switch>
         </Router>
       </ApolloProvider>
-    )
+    );
   } else if (localStorage.getItem("id_token")) {
     return (
       <ApolloProvider client={client}>
         <Router>
-          <switch>
+          <Switch>
             <div>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-            <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
-          <Route exact path="/profile">
-            <NavBar />
-            <Profile />
-          </Route>
-          <Route exact path="/search">
-            <NavBar />
-            <SearchResultScreen />
-          </Route>
-          <Route exact path="/matches">
-            <NavBar />
-            <Matches />
-          </Route>
-          <Route exact path="/settings">
-            <NavBar />
-            <Settings />
-          </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/profile">
+                <NavBar />
+                <Profile />
+              </Route>
+              <Route exact path="/search">
+                <NavBar />
+                <SearchResultScreen />
+              </Route>
+              <Route exact path="/matches">
+                <NavBar />
+                <Matches />
+              </Route>
+              <Route exact path="/settings">
+                <NavBar />
+                <Settings />
+              </Route>
             </div>
-          </switch>
+          </Switch>
         </Router>
       </ApolloProvider>
-    )
+    );
   }
 }
 
