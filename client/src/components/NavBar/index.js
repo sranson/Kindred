@@ -63,6 +63,17 @@ const NavBar = () => {
                   Settings
                 </NavLink>
               </li>
+
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link"
+                  to="/settings"
+                  activeStyle={{ fontWeight: "bold" }}
+                  onClick={Auth.logout()}
+                >
+                  Logout
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
