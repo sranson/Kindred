@@ -34,22 +34,21 @@ export const ADD_USER = gql`
 
 //saveCategory mutation
 export const SAVE_CATEGORY = gql`
-  mutation saveSingleCategory($categoryData: saveCategoryInput!) {
-    saveCategory(categoryData: $categoryData) {
-      _id
-      username
-      email
-      savedCategories {
-        categoryId
-        title
-        type
-        image
-        description
-        wikiUrl
-        youtubeUrl
-      }
+mutation saveCategory($title: String, $type: String, $description: String, $wikiUrl: String, $youtubeUrl: String) {
+  saveCategory(title: $title, type: $type, description: $description, wikiUrl: $wikiUrl, youtubeUrl: $youtubeUrl) {
+    _id
+    username
+    email
+    savedCategories {
+      categoryId
+      title
+      type
+      description
+      wikiUrl
+      youtubeUrl
     }
   }
+}
 `;
 
 //removeCategory mutation
