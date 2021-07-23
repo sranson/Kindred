@@ -9,7 +9,7 @@ const typeDefs = gql`
   }
 
   type Category {
-    categoryId: ID!
+    _id: ID!
     title: String
     type: String
     image: String
@@ -23,16 +23,6 @@ const typeDefs = gql`
     user: User
   }
 
-  input saveCategoryInput {
-    categoryId: ID
-    title: String
-    type: String
-    image: String
-    description: String
-    wikiUrl: String
-    youtubeUrl: String
-  }
-
   type Query {
     me: User
     users: [User]
@@ -42,7 +32,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
 
-    saveCategory(categoryData: saveCategoryInput): User
+    saveCategory(title: String, type: String, description: String, wikiUrl: String, youtubeUrl: String, image: String): User
 
     removeCategory(categoryId: ID!): User
   }

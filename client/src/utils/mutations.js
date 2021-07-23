@@ -17,11 +17,7 @@ export const LOGIN_USER = gql`
 
 //addUser mutation
 export const ADD_USER = gql`
-  mutation addSingleUser(
-    $username: String!
-    $email: String!
-    $password: String!
-  ) {
+  mutation addSingleUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
       token
       user {
@@ -34,22 +30,21 @@ export const ADD_USER = gql`
 
 //saveCategory mutation
 export const SAVE_CATEGORY = gql`
-  mutation saveSingleCategory($categoryData: saveCategoryInput!) {
-    saveCategory(categoryData: $categoryData) {
+mutation saveCategory($title: String, $type: String, $description: String, $wikiUrl: String, $youtubeUrl: String, $image: String) {
+  saveCategory(title: $title, type: $type, description: $description, wikiUrl: $wikiUrl, youtubeUrl: $youtubeUrl, image: $image) {
+    _id
+    username
+    email
+    savedCategories {
       _id
-      username
-      email
-      savedCategories {
-        categoryId
-        title
-        type
-        image
-        description
-        wikiUrl
-        youtubeUrl
-      }
+      title
+      type
+      description
+      wikiUrl
+      youtubeUrl
     }
   }
+}
 `;
 
 //removeCategory mutation

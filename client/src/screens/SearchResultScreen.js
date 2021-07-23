@@ -7,6 +7,7 @@ import SimilarResultCard from '../components/Card/SimilarResultCard'
 
 class SearchResultScreen extends React.Component {
     state = { 
+        searchedType: "",
         searchedTitle: "",
         searchedForDescrip: "",
         searchedForWiky: "",
@@ -15,6 +16,7 @@ class SearchResultScreen extends React.Component {
       };
 
     onSearchSubmit = (term, category) => {
+    this.setState({ searchedType: category })
     this.setState({ searchedImage: "" })
     // Tastedive API call to get similar results
     axios.get("https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
@@ -70,12 +72,12 @@ class SearchResultScreen extends React.Component {
             return (
             <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
                 <SearchBar onSearchBtnClick={this.onSearchSubmit} />
-                <Card image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
+                <Card type={this.state.searchedType} image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
                 <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
                         {this.state.similarities.map((result) => {
                             return (
                                 <div className="col-md-3" style={{ marginBottom: "3%" }}>
-                                    <SimilarResultCard video={result.yUrl} title={result.Name} description={result.wTeaser.substring(0, 100)} moreInfo={result.wUrl}/>
+                                    <SimilarResultCard type={this.state.searchedType} video={result.yUrl} title={result.Name} description={result.wTeaser.substring(0, 100)} moreInfo={result.wUrl}/>
                                 </div>
                             )
                         })}
