@@ -19,6 +19,7 @@ import Settings from "./components/Settings";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -43,47 +44,83 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
-  return (
-    <ApolloProvider client={client}>
-      <Router>
-        <Switch>
-          <div>
-            {/* Define routes to render different page components at different paths */}
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-            <Route exact path="/profile">
-              <NavBar />
-              <Profile />
-              <NavBar />
-            </Route>
-            <Route exact path="/search">
-              <NavBar />
-              <SearchResultScreen />
-              <NavBar />
-            </Route>
-            <Route exact path="/matches">
-              <NavBar />
-              <Matches />
-              <NavBar />
-            </Route>
-            <Route exact path="/settings">
-              <NavBar />
-              <Settings />
-              <NavBar />
-            </Route>
-          </div>
-        </Switch>
-      </Router>
-    </ApolloProvider>
-  );
+  if (!localStorage.getItem("id_token")) {
+    return (
+      <ApolloProvider client={client}>
+        <Router>
+          <switch>
+            <div>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/profile">
+                <Login />
+              </Route>
+              <Route exact path="/search">
+                <Login />
+              </Route>
+              <Route exact path="/matches">
+                <Login />
+              </Route>
+              <Route exact path="/settings">
+                <Login />
+              </Route>
+            </div>
+          </switch>
+        </Router>
+      </ApolloProvider>
+    )
+  } else if (localStorage.getItem("id_token")) {
+    return (
+      <ApolloProvider client={client}>
+        <Router>
+          <switch>
+            <div>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/profile">
+                <NavBar />
+                <Profile />
+              </Route>
+              <Route exact path="/search">
+                <NavBar />
+                <SearchResultScreen />
+              </Route>
+              <Route exact path="/matches">
+                <NavBar />
+                <Matches />
+              </Route>
+              <Route exact path="/settings">
+                <NavBar />
+                <Settings />
+              </Route>
+            </div>
+          </switch>
+        </Router>
+      </ApolloProvider>
+    )
+  }
 }
 
 export default App;

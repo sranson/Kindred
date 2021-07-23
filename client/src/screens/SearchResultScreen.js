@@ -34,9 +34,9 @@ class SearchResultScreen extends React.Component {
         this.setState({ searchedForDescrip: results.data.Similar.Info[0].wTeaser.substring(0, 100) })
         this.setState({ searchedForWiky: results.data.Similar.Info[0].wUrl })
         this.setState({ similarities: results.data.Similar.Results })
-        console.log(this.state.similarities);
+        // console.log(this.state.similarities);
     }).catch((err) => {
-        console.log(err);
+        // console.log(err);
     });
 
     axios.get("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
