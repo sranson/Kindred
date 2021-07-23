@@ -20,7 +20,7 @@ export default function Login() {
   //executable LOGIN_USER mutation
   const [loginUser, { error }] = useMutation(LOGIN_USER, {
     update(proxy, result) {
-    //   console.log(result);
+      //   console.log(result);
     },
     variables: values,
   });
@@ -87,6 +87,11 @@ export default function Login() {
           <div id="button" className="d-grid gap-2">
             <Button type="submit" id="login" variant="secondary" size="lg">
               Login
+            </Button>
+          </div>
+          <div id="button" className="d-grid gap-2">
+            <Button type="submit" href="../Signup" id="login" variant="secondary" size="lg">
+              Go to Sign Up
             </Button>
           </div>
         </Form>
