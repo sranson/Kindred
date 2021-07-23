@@ -2,6 +2,10 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Auth from "../../utils/auth";
 
+const logoutStyle = {
+  cursor: "pointer",
+};
+
 const NavBar = () => {
   return (
     <div>
@@ -62,6 +66,15 @@ const NavBar = () => {
                 >
                   Settings
                 </NavLink>
+              </li>
+              <li
+                className="nav-item nav-link"
+                style={logoutStyle}
+                onClick={() => {
+                  Auth.logout();
+                }}
+              >
+                Logout
               </li>
             </ul>
           </div>

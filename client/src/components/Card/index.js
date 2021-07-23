@@ -1,7 +1,29 @@
 import React from "react";
+import { useMutation } from '@apollo/client';
+import { SAVE_CATEGORY } from '../../utils/mutations';
 
 
 const Card = (props) => {
+
+  const [saveCategory] = useMutation(SAVE_CATEGORY);
+
+  const saveTheCategory = (e) => {
+    e.preventDefault();
+    try {
+      saveCategory({
+        variables: {
+          title: props.title,
+          type: props.type,
+          description: props.description,
+          wikiUrl: props.moreInfo,
+          image: props.image
+        }
+      })
+    } catch(err) {
+      console.error(err)
+    }
+  }
+
   return (
       <div style={{ marginLeft: "4%" }}>
           <div className="card" style={{width: "18rem"}}>
@@ -11,7 +33,7 @@ const Card = (props) => {
                 <p className="card-text">{props.description}...</p>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <a href={props.moreInfo} target="_blank" className="btn btn-primary">Read More</a>
-                        <a href="#" target="_blank" className="btn btn-primary">Save</a>
+                        <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory}>Save</a>
                   </div>
             </div>
           </div>
