@@ -8,9 +8,9 @@ const Card = (props) => {
 
   useEffect(() => {
     if (props.profile) {
-      setText("DELETE");
+      setText("Delete");
     } else {
-      setText("SAVE");
+      setText("Save");
     }
   }, []);
 

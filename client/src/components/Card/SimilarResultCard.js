@@ -7,11 +7,11 @@ const SimilarResultCard = (props) => {
   const [text, setText] = useState();
 
   useEffect(() => {
-    console.log("SIMILAR RESULT CARD HERE")
+    console.log("SIMILAR RESULT CARD HERE");
     if (props.profile) {
-      setText("DELETE");
+      setText("Delete");
     } else {
-      setText("SAVE");
+      setText("Save");
     }
   }, []);
 
