@@ -57,29 +57,15 @@ const SimilarResultCard = (props) => {
             <h5 className="card-title">{props.title}</h5>
             <p className="card-text">{props.description}...</p>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <a
-                href={props.moreInfo}
-                target="_blank"
-                className="btn btn-primary"
-              >
+              <a href={props.moreInfo} target="_blank" className="btn btn-primary">
                 Read More
               </a>
               {props.profile ? (
-                <a
-                  href="#"
-                  target="_blank"
-                  className="btn btn-primary"
-                  onClick={deleteTheCategory}
-                >
+                <a href="#" target="_blank" className="btn btn-primary" onClick={deleteTheCategory}>
                   {text}
                 </a>
               ) : (
-                <a
-                  href="#"
-                  target="_blank"
-                  className="btn btn-primary"
-                  onClick={saveTheCategory}
-                >
+                <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory} >
                   {text}
                 </a>
               )}
@@ -96,29 +82,15 @@ const SimilarResultCard = (props) => {
             <h5 className="card-title">{props.title}</h5>
             <p className="card-text">{props.description}...</p>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <a
-                href={props.moreInfo}
-                target="_blank"
-                className="btn btn-primary"
-              >
+              <a href={props.moreInfo} target="_blank" className="btn btn-primary" >
                 Read More
               </a>
               {props.profile ? (
-                <a
-                  href="#"
-                  target="_blank"
-                  className="btn btn-primary"
-                  onClick={deleteTheCategory}
-                >
+                <a href="#" target="_blank" className="btn btn-primary" onClick={deleteTheCategory} >
                   {text}
                 </a>
               ) : (
-                <a
-                  href="#"
-                  target="_blank"
-                  className="btn btn-primary"
-                  onClick={saveTheCategory}
-                >
+                <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory} >
                   {text}
                 </a>
               )}
