@@ -19,24 +19,25 @@
 }
 
 #email {
-    margin: 20px 200px 20px 200px;
-    font-size: 50px;
+    margin: 20px 500px 20px 500px;
 }
 
 #password {
     margin: 20px 200px 20px 200px;
-    font-size: 50px;
 }
 
 #inputUser {
+    margin: 5px 0 0 200px;
     font-size: 30px;
+    width: 80%;
 }
 
 #inputPassword {
-    font-size: 30px;
+    margin: 5px 0 0 200px;
+    width: 80%;
 }
 
 #button {
-    margin: 20px 200px 20px 200px;
+    margin: 5px;
 }
 
