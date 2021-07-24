@@ -38,3 +38,16 @@ export const QUERY_USERS = gql`
     }
   }
 `;
+
+//matches query
+export const QUERY_MATCHES = gql`
+query matches {
+  users{
+    username
+    savedCategories{
+      type 
+      title
+    }
+  }
+  }
+`;
