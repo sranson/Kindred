@@ -5,17 +5,17 @@ import Button from 'react-bootstrap/Button';
 export default function Login() {
     return (
         <main>
-            <h1 className='title'>
+            <h1 className='mainTitle'>
                 <p>Kindred</p>
             </h1>
-            <p className='subtitle'>
+            <p className='mainSubTitle'>
                 <p>Spark an Interest</p>
             </p>
             <div className="d-grid gap-2">
-                <Button id='login' variant="secondary" size="lg">
+                <Button id='login' variant="secondary" size="lg" href="/login">
                     Login
                 </Button>
-                <Button id='signup' variant="secondary" size="lg">
+                <Button id='signup' variant="secondary" size="lg" href="/signup">
                     Sign Up
                 </Button>
             </div>

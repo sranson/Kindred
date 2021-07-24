@@ -1,38 +1,16 @@
 import React from "react";
-import axios from "axios";
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
-  state = { searchTerm: "", searchCategory: "" };
-
-  state = { searchTerm: "", searchCategory: "" };
+  state = {
+    searchTerm: "",
+    searchCategory: "",
+  };
 
   onSearchBtnClick = () => {
     let term = this.state.searchTerm;
     let category = this.state.searchCategory;
-    console.log(`Category: ${category}`);
-    console.log(`Search Term: ${term}`);
-    axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar",
-        {
-          params: {
-            q: term,
-            type: category,
-            info: 1,
-            limit: 10,
-          },
-          headers: {
-            Authorization: "",
-          },
-        }
-      )
-      .then((results) => {
-        console.log(results);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this.props.onSearchBtnClick(term, category);
     this.setState({ searchTerm: "" }); // Clear out the input text after 'Search' button is clicked
   };
 
@@ -80,15 +58,7 @@ class SearchBar extends React.Component {
               <li>
                 <a
                   className="dropdown-item"
-                  onClick={(e) => this.setState({ searchCategory: "Podcasts" })}
-                >
-                  Podcasts
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  onClick={(e) => this.setState({ searchCategory: "Books" })}
+                  onClick={(e) => this.setState({ searchCategory: "books" })}
                 >
                   Books
                 </a>
@@ -109,7 +79,16 @@ class SearchBar extends React.Component {
                   Games
                 </a>
               </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  onClick={(e) => this.setState({ searchCategory: "podcasts" })}
+                >
+                  Podcasts
+                </a>
+              </li>
             </ul>
+
             <input
               type="text"
               className="form-control"
@@ -117,6 +96,7 @@ class SearchBar extends React.Component {
               value={this.state.searchTerm}
               onChange={(e) => this.setState({ searchTerm: e.target.value })}
             />
+
             <div style={{ marginLeft: "0.5%" }}>
               <button
                 type="button"
@@ -132,4 +112,5 @@ class SearchBar extends React.Component {
     );
   }
 }
+
 export default SearchBar;

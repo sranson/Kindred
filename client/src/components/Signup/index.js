@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import "./login.css";
-import { Form, Button } from "react-bootstrap";
+import "./signup.css";
+import { Form, Button, Spinner } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../../utils/mutations";
+import { ADD_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
-export default function Login() {
+export default function Signup() {
   // set initial form state
   const [values, setValues] = useState({
+    username: "",
     email: "",
     password: "",
   });
@@ -17,20 +18,20 @@ export default function Login() {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  //executable LOGIN_USER mutation
-  const [loginUser, { error }] = useMutation(LOGIN_USER, {
+  //executable ADD_USER mutation
+  const [addUser, { loading }] = useMutation(ADD_USER, {
     update(proxy, result) {
-      //   console.log(result);
+      // console.log(result);
     },
     variables: values,
   });
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    // loginUser();
+    // addUser();
 
     try {
-      const { data } = await loginUser({ variables: { ...values } });
+      const { data } = await addUser({ variables: { ...values } });
 
       // console.log(data);
 
@@ -38,13 +39,14 @@ export default function Login() {
         throw new Error("something went wrong!");
       }
 
-      Auth.login(data.login.token);
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
       // setShowAlert(true);
     }
 
     setValues({
+      username: "",
       email: "",
       password: "",
     });
@@ -52,24 +54,40 @@ export default function Login() {
 
   return (
     <main className="main">
-      <h1 className="loginTitle">
+      <h1 className="signUpTitle">
         <p>Kindred</p>
       </h1>
-      <p className="loginSubTitle">
+      <p className="signUpSubTitle">
         <p>Spark an Interest</p>
       </p>
       <div>
         <Form onSubmit={onSubmit} noValidate>
-          <Form.Group id="email" className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
+          <Form.Group id="username" className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Username</Form.Label>
             <Form.Control
+              required
+              placeholder="Enter username"
+              type="text"
+              name="username"
+              value={values.username}
+              onChange={onChange}
+            />
+          </Form.Group>
+          <Form.Group id="email" className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              required
               type="email"
               placeholder="Your email address"
               name="email"
               value={values.email}
               onChange={onChange}
             />
+            <Form.Text id="warning" className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
           </Form.Group>
+
           <Form.Group
             id="password"
             className="mb-3"
@@ -77,6 +95,7 @@ export default function Login() {
           >
             <Form.Label>Password</Form.Label>
             <Form.Control
+              required
               type="password"
               placeholder="Your password"
               name="password"
@@ -85,13 +104,13 @@ export default function Login() {
             />
           </Form.Group>
           <div id="button" className="d-grid gap-2">
-            <Button type="submit" id="login" variant="secondary" size="lg">
-              Login
+            <Button type="submit" variant="secondary" size="lg">
+              Sign Up
             </Button>
           </div>
           <div id="button" className="d-grid gap-2">
-            <Button type="submit" href="../Signup" id="login" variant="secondary" size="lg">
-              Go to Sign Up
+            <Button type="submit" href="../Login" variant="secondary" size="lg">
+              Already Have An Account? Log in Here
             </Button>
           </div>
         </Form>
