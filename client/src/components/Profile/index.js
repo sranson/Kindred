@@ -35,7 +35,6 @@ class Collapsible extends React.Component {
 
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
-  console.log(data);
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -43,8 +42,6 @@ const Profile = () => {
     const filter = data.me.savedCategories.filter((category) => {
       return category.type === chosenCategory;
     });
-
-    console.log(filter);
 
     return filter;
   };
