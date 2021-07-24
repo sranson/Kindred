@@ -106,36 +106,10 @@ const Profile = () => {
       <div className="interests">
         <Collapsible title="Music">{createCardGrid("Music")}</Collapsible>
         <Collapsible title="Movies">{createCardGrid("Movies")}</Collapsible>
-        <Collapsible title="TV Shows">
-          <ul>
-            <li>I Think You Should Leave</li>
-            <li>It's Always Sunny in Philadelphia</li>
-          </ul>
-        </Collapsible>
-        <Collapsible title="Books">
-          <ul>
-            <li>The Hobbit</li>
-            <li>Neuromancer</li>
-          </ul>
-        </Collapsible>
-        <Collapsible title="Authors">
-          <ul>
-            <li>HP Lovecraft</li>
-            <li>William Gibson</li>
-          </ul>
-        </Collapsible>
-        <Collapsible title="Games">
-          <ul>
-            <li>Bloodborne</li>
-            <li>Monster Hunter World</li>
-          </ul>
-        </Collapsible>
-        <Collapsible title="Podcasts">
-          <ul>
-            <li>Your Kickstarter Sucks</li>
-            <li>Episode One</li>
-          </ul>
-        </Collapsible>
+        <Collapsible title="TV Shows">{createCardGrid("")}</Collapsible>
+        <Collapsible title="Books">{createCardGrid("books")}</Collapsible>
+        <Collapsible title="Authors">{createCardGrid("Authors")}</Collapsible>
+        <Collapsible title="Games">{createCardGrid("Games")}</Collapsible>
       </div>
     </div>
   );
