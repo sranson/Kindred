@@ -59,13 +59,13 @@ const Profile = () => {
             {filteredCategory(chosenCategory).map((category) => {
               if (category.youtubeUrl === null) {
                 return (
-                  <div className="col-md-3">
+                  <div className="col-md-3" style={{ marginTop: "2%", marginBottom:"2%" }}>
                     <Card type={category.type} image={category.image} title={category.title} description={category.description} moreInfo={category.wikiUrl} profile={true} key={category.title}></Card>
                   </div>
                 );
               } else if (category.youtubeUrl) {
                 return (
-                  <div className="col-md-3">
+                  <div className="col-md-3" style={{ marginTop: "2%", marginBottom:"2%" }}>
                     <SimilarResultCard type={category.type} title={category.title} description={category.description} moreInfo={category.wikiUrl} video={category.youtubeUrl} profile={true} key={category.title}></SimilarResultCard>
                   </div>
                 );
