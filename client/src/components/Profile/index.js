@@ -67,11 +67,10 @@ const Profile = () => {
                     key={category.title}
                   ></Card>
                 );
-              } else {
+              } else if (category.youtubeUrl) {
                 return (
                   <SimilarResultCard
                     type={category.type}
-                    image={category.image}
                     title={category.title}
                     description={category.description}
                     moreInfo={category.wikiUrl}
@@ -80,7 +79,7 @@ const Profile = () => {
                     key={category.title}
                   ></SimilarResultCard>
                 );
-              }
+              } 
             })}
           </ul>
         ) : (
