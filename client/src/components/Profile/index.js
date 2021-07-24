@@ -54,33 +54,25 @@ const Profile = () => {
       <div>
         {data.me.savedCategories.length > 0 ? (
           <ul>
+
+            <div className="row" >
             {filteredCategory(chosenCategory).map((category) => {
               if (category.youtubeUrl === null) {
                 return (
-                  <Card
-                    type={category.type}
-                    image={category.image}
-                    title={category.title}
-                    description={category.description}
-                    moreInfo={category.wikiUrl}
-                    profile={true}
-                    key={category.title}
-                  ></Card>
+                  <div className="col-md-3">
+                    <Card type={category.type} image={category.image} title={category.title} description={category.description} moreInfo={category.wikiUrl} profile={true} key={category.title}></Card>
+                  </div>
                 );
               } else if (category.youtubeUrl) {
                 return (
-                  <SimilarResultCard
-                    type={category.type}
-                    title={category.title}
-                    description={category.description}
-                    moreInfo={category.wikiUrl}
-                    video={category.youtubeUrl}
-                    profile={true}
-                    key={category.title}
-                  ></SimilarResultCard>
+                  <div className="col-md-3">
+                    <SimilarResultCard type={category.type} title={category.title} description={category.description} moreInfo={category.wikiUrl} video={category.youtubeUrl} profile={true} key={category.title}></SimilarResultCard>
+                  </div>
                 );
               } 
             })}
+            </div>
+
           </ul>
         ) : (
           <div className="ml-2">No interest saved for this category!</div>
@@ -94,11 +86,7 @@ const Profile = () => {
       <div className="profileHeader">
         <div
           className="profPic"
-          style={{
-            backgroundImage:
-              "url(https://pbs.twimg.com/profile_images/1047268283374850050/OBy8k6AX_400x400.jpg)",
-          }}
-        ></div>
+          style={{ backgroundImage: "url(https://pbs.twimg.com/profile_images/1047268283374850050/OBy8k6AX_400x400.jpg)", }} ></div>
         <h3 className="username">{data.me.username}</h3>
       </div>
       <div className="about">I just really love {data.me.username}</div>
