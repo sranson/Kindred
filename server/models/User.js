@@ -19,6 +19,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  profilePic: {
+    type: String,
+    default: 'https://i.stack.imgur.com/34AD2.jpg'
+  },
   savedCategories: [categorySchema],
 });
 

@@ -1,4 +1,7 @@
 const express = require("express");
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary")
 const path = require("path");
 const { ApolloServer } = require("apollo-server-express");
 const db = require("./config/connection");
@@ -26,6 +29,20 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
+// configuration for cloudinary which allows us to upload and store profile images
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET 
+});
+const storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: profilepics,
+  allowedFormats: ["jpg", "png"],
+  transformation: [{width: 200, height: 200, crop: "limit"}]
+});
+const parser = multer({storage: storage});
 
 db.once("open", () => {
   app.listen(PORT, () => {
