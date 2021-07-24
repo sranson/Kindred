@@ -106,10 +106,11 @@ const Profile = () => {
       <div className="interests">
         <Collapsible title="Music">{createCardGrid("Music")}</Collapsible>
         <Collapsible title="Movies">{createCardGrid("Movies")}</Collapsible>
-        <Collapsible title="TV Shows">{createCardGrid("")}</Collapsible>
+        <Collapsible title="TV Shows">{createCardGrid("shows")}</Collapsible>
         <Collapsible title="Books">{createCardGrid("books")}</Collapsible>
         <Collapsible title="Authors">{createCardGrid("Authors")}</Collapsible>
         <Collapsible title="Games">{createCardGrid("Games")}</Collapsible>
+        <Collapsible title="Podcasts">{createCardGrid("podcasts")}</Collapsible>
       </div>
     </div>
   );

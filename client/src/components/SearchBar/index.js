@@ -79,6 +79,14 @@ class SearchBar extends React.Component {
                   Games
                 </a>
               </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  onClick={(e) => this.setState({ searchCategory: "podcasts" })}
+                >
+                  Podcasts
+                </a>
+              </li>
             </ul>
 
             <input
