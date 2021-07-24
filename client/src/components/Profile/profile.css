@@ -1,69 +1,68 @@
 .profile {
-    background-color: #BDE2CB;
-    height: 100vh;
-    color:#152C43;
-    overflow: hidden;
+  background-color: #bde2cb;
+  /* height: 100vh; */
+  color: #152c43;
+  overflow: hidden;
 }
 
 .profileHeader {
-    padding-left: 20px;
-    padding-top: 10px;
-    display: flex;
-    flex-wrap: nowrap;
+  padding-left: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .profPic {
-    background-size:cover;
-    border-radius:50%;
-    height:100px;
-    width: 100px;
-    margin-right: 5px;
+  background-size: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin-right: 5px;
 }
 
 .username {
-    font-size: 1.75rem;
-    align-self: center;
+  font-size: 1.75rem;
+  align-self: center;
 }
 
 .about {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .content {
-    background-color: #F5F0EC;
-    border-style: solid;
-    border-color: #152C43;
-    border-width: 1px;
-    margin-top: 0px;
+  background-color: #f5f0ec;
+  border-style: solid;
+  border-color: #152c43;
+  border-width: 1px;
+  margin-top: 0px;
 }
 
 .content ul {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .profPic {
-    background-size:cover;
-    border-radius:50%;
-    height:100px;
-    width: 100px;
+  background-size: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 
 .interests {
-    margin-left: 10px;
-    margin-right:10px;
-    font-size: 1.25rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.25rem;
 }
 
 .interestHeader {
-    background-color:#DED0C2;
-    border-style: solid;
-    border-width: 1px;
-    border-color:#152C43;
-    margin-top:-1px;
-    font-weight: bold;
-    padding-left: 5px;
+  background-color: #ded0c2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #152c43;
+  margin-top: -1px;
+  font-weight: bold;
+  padding-left: 5px;
 }
-
