@@ -1,3 +1,4 @@
-#customBackground {
+.customBackground {
     background-color: #BDE2CB;
+    height: 100vh;
 }
