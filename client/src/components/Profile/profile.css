@@ -1,47 +1,4 @@
 .profile {
-<<<<<<< HEAD
-    background-color: #BDE2CB;
-    height: 100vh;
-    color:#152C43;
-}
-
-/* .profileHeader {
-    display:flex;
-    flex-wrap: nowrap;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 10px;
-    max-width:100%;
-} */
-
-.username {
-    font-size: 1.75rem;
-}
-
-.profPic {
-    background-size:cover;
-    border-radius:50%;
-    height:100px;
-    width: 100px;
-}
-
-.interests {
-    margin-left: 10px;
-    margin-right:10px;
-    font-size: 1.25rem;
-}
-
-.interestHeader {
-    background-color:#DED0C2;
-    border-style: solid;
-    border-width: 1px;
-    border-color:#152C43;
-    margin-top:-1px;
-    font-weight: bold;
-    padding-left: 5px;
-}
-
-=======
   background-color: #bde2cb;
   /* height: 100vh; */
   color: #152c43;
@@ -109,4 +66,3 @@
   font-weight: bold;
   padding-left: 5px;
 }
->>>>>>> e69abbf4942d1637e281380e9dc3c8e1929d1e67
