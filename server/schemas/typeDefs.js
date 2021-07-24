@@ -32,9 +32,16 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
 
-    saveCategory(title: String, type: String, description: String, wikiUrl: String, youtubeUrl: String, image: String): User
+    saveCategory(
+      title: String
+      type: String
+      description: String
+      wikiUrl: String
+      youtubeUrl: String
+      image: String
+    ): User
 
-    removeCategory(categoryId: ID!): User
+    removeCategory(categoryTitle: String!): User
   }
 `;
 

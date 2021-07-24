@@ -67,12 +67,11 @@ export const SAVE_CATEGORY = gql`
 
 //removeCategory mutation
 export const REMOVE_CATEGORY = gql`
-  mutation removeCategory($categoryId: ID!) {
-    removeCategory(categoryId: $categoryId) {
+  mutation removeCategory($categoryTitle: String!) {
+    removeCategory(categoryTitle: $categoryTitle) {
       _id
       username
       savedCategories {
-        categoryId
         title
         type
         image

@@ -39,15 +39,14 @@ const Card = (props) => {
     }
   };
 
-  const deleteTheCategory = (e) => {
-    e.preventDefault();
+  const deleteTheCategory = async (categoryTitle) => {
     changeBtnText("DELETED!");
     try {
-      removeCategory({
-        // variables: {
-        //   categoryId,
-        // },
-      });
+      const { data } = await removeCategory({ variables: { categoryTitle } });
+
+      if (!data) {
+        throw new Error("something went wrong!");
+      }
     } catch (err) {
       console.error(err);
     }
@@ -76,23 +75,23 @@ const Card = (props) => {
                 Read More
               </a>
               {props.profile ? (
-                <a
+                <button
                   href="#"
                   target="_blank"
                   className="btn btn-primary"
-                  onClick={deleteTheCategory}
+                  onClick={() => deleteTheCategory(props.title)}
                 >
                   {text}
-                </a>
+                </button>
               ) : (
-                <a
+                <button
                   href="#"
                   target="_blank"
                   className="btn btn-primary"
                   onClick={saveTheCategory}
                 >
                   {text}
-                </a>
+                </button>
               )}
             </div>
           </div>
@@ -115,23 +114,23 @@ const Card = (props) => {
                 Read More
               </a>
               {props.profile ? (
-                <a
+                <button
                   href="#"
                   target="_blank"
                   className="btn btn-primary"
-                  onClick={deleteTheCategory}
+                  onClick={() => deleteTheCategory(props.title)}
                 >
                   {text}
-                </a>
+                </button>
               ) : (
-                <a
+                <button
                   href="#"
                   target="_blank"
                   className="btn btn-primary"
                   onClick={saveTheCategory}
                 >
                   {text}
-                </a>
+                </button>
               )}
             </div>
           </div>
