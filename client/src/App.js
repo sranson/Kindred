@@ -50,7 +50,7 @@ function App() {
       <ApolloProvider client={client}>
         <Router>
           <Switch>
-            <div>
+            <div className="customBackground">
               <Route exact path="/">
                 <Home />
               </Route>
@@ -82,7 +82,7 @@ function App() {
       <ApolloProvider client={client}>
         <Router>
           <Switch>
-            <div>
+            <div className="customBackground">
               <Route exact path="/">
                 <Home />
               </Route>

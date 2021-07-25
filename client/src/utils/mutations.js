@@ -17,7 +17,11 @@ export const LOGIN_USER = gql`
 
 //addUser mutation
 export const ADD_USER = gql`
-  mutation addSingleUser($username: String!, $email: String!, $password: String!) {
+  mutation addSingleUser(
+    $username: String!
+    $email: String!
+    $password: String!
+  ) {
     addUser(username: $username, email: $email, password: $password) {
       token
       user {
@@ -30,31 +34,44 @@ export const ADD_USER = gql`
 
 //saveCategory mutation
 export const SAVE_CATEGORY = gql`
-mutation saveCategory($title: String, $type: String, $description: String, $wikiUrl: String, $youtubeUrl: String, $image: String) {
-  saveCategory(title: $title, type: $type, description: $description, wikiUrl: $wikiUrl, youtubeUrl: $youtubeUrl, image: $image) {
-    _id
-    username
-    email
-    savedCategories {
+  mutation saveCategory(
+    $title: String
+    $type: String
+    $description: String
+    $wikiUrl: String
+    $youtubeUrl: String
+    $image: String
+  ) {
+    saveCategory(
+      title: $title
+      type: $type
+      description: $description
+      wikiUrl: $wikiUrl
+      youtubeUrl: $youtubeUrl
+      image: $image
+    ) {
       _id
-      title
-      type
-      description
-      wikiUrl
-      youtubeUrl
+      username
+      email
+      savedCategories {
+        _id
+        title
+        type
+        description
+        wikiUrl
+        youtubeUrl
+      }
     }
   }
-}
 `;
 
 //removeCategory mutation
-const REMOVE_CATEGORY = gql`
-  mutation removeCategory($categoryId: ID!) {
-    removeCategory(categoryId: $categoryId) {
+export const REMOVE_CATEGORY = gql`
+  mutation removeCategory($categoryTitle: String!) {
+    removeCategory(categoryTitle: $categoryTitle) {
       _id
       username
       savedCategories {
-        categoryId
         title
         type
         image

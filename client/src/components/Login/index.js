@@ -60,9 +60,9 @@ export default function Login() {
       </p>
       <div>
         <Form onSubmit={onSubmit} noValidate>
-          <Form.Group id="email" className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label id="email">Email</Form.Label>
+            <Form.Control id="inputUser"
               type="email"
               placeholder="Your email address"
               name="email"
@@ -71,12 +71,12 @@ export default function Login() {
             />
           </Form.Group>
           <Form.Group
-            id="password"
             className="mb-3"
             controlId="formBasicPassword"
           >
-            <Form.Label>Password</Form.Label>
-            <Form.Control
+
+            <Form.Label id="password">Password</Form.Label>
+            <Form.Control id="inputPassword"
               type="password"
               placeholder="Your password"
               name="password"
@@ -84,13 +84,13 @@ export default function Login() {
               onChange={onChange}
             />
           </Form.Group>
-          <div id="button" className="d-grid gap-2">
-            <Button type="submit" id="login" variant="secondary" size="lg">
+          <div className="d-grid gap-2">
+            <Button id="button" type="submit" variant="secondary" size="lg">
               Login
             </Button>
           </div>
-          <div id="button" className="d-grid gap-2">
-            <Button type="submit" href="../Signup" id="login" variant="secondary" size="lg">
+          <div className="d-grid gap-2">
+            <Button id="button" type="submit" href="../signup" variant="secondary" size="lg">
               Go to Sign Up
             </Button>
           </div>
