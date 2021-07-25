@@ -65,7 +65,7 @@ const SimilarResultCard = (props) => {
               <a
                 href={props.moreInfo}
                 target="_blank"
-                className="btn btn-primary"
+                className="btn btn-info"
               >
                 Read More
               </a>
@@ -73,7 +73,7 @@ const SimilarResultCard = (props) => {
                 <button
                   href="#"
                   target="_blank"
-                  className="btn btn-primary"
+                  className="btn btn-info"
                   onClick={() => deleteTheCategory(props.title)}
                 >
                   {text}
@@ -82,7 +82,7 @@ const SimilarResultCard = (props) => {
                 <a
                   href="#"
                   target="_blank"
-                  className="btn btn-primary"
+                  className="btn btn-info"
                   onClick={saveTheCategory}
                 >
                   {text}
@@ -104,7 +104,7 @@ const SimilarResultCard = (props) => {
               <a
                 href={props.moreInfo}
                 target="_blank"
-                className="btn btn-primary"
+                className="btn btn-info"
               >
                 Read More
               </a>
@@ -112,7 +112,7 @@ const SimilarResultCard = (props) => {
                 <button
                   href="#"
                   target="_blank"
-                  className="btn btn-primary"
+                  className="btn btn-info"
                   onClick={() => deleteTheCategory(props.title)}
                 >
                   {text}
@@ -121,7 +121,7 @@ const SimilarResultCard = (props) => {
                 <a
                   href="#"
                   target="_blank"
-                  className="btn btn-primary"
+                  className="btn btn-info"
                   onClick={saveTheCategory}
                 >
                   {text}
