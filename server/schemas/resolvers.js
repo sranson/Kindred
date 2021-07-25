@@ -58,11 +58,11 @@ const resolvers = {
       // If user attempts to execute this mutation and isn't logged in, throw an error
       throw new AuthenticationError("You need to be logged in!");
     },
-    removeCategory: async (parent, { categoryId }, context) => {
+    removeCategory: async (parent, { categoryTitle }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedCategories: { categoryId: categoryId } } },
+          { $pull: { savedCategories: { title: categoryTitle } } },
           { new: true }
         );
         return updatedUser;

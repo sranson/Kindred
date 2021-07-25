@@ -86,7 +86,7 @@ const Profile = () => {
           style={{ backgroundImage: "url(https://pbs.twimg.com/profile_images/1047268283374850050/OBy8k6AX_400x400.jpg)", }} ></div>
         <h3 className="username">{data.me.username}</h3>
       </div>
-      <div className="about">I just really love {data.me.username}</div>
+      {/* <div className="about">I just really love {data.me.username}</div> */}
       <div className="interests">
         <Collapsible title="Music">{createCardGrid("Music")}</Collapsible>
         <Collapsible title="Movies">{createCardGrid("Movies")}</Collapsible>
