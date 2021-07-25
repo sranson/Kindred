@@ -47,6 +47,17 @@ const resolvers = {
 
       return { token, user };
     },
+    updateAbout: async (parent, {about}, context) => {
+      if(context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          {_id: context.user._id},
+          {about: about},
+          { new: true, runValidators: true }
+        );
+        return updatedUser;
+      }
+    },
+
     singleFileUpload: async (parent, {file}, context) => {
       cloudinary.config({
         cloud_name: process.env.CLOUD_NAME,

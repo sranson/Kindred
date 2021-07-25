@@ -88,3 +88,13 @@ export const SINGLE_UPLOAD_MUTATION = gql`
     singleFileUpload(file: $file)
   }
 `;
+
+export const UPDATE_ABOUT = gql`
+  mutation updateAbout($about: String!) {
+    updateAbout(about: $about) {
+      _id
+      username
+      about
+    }
+  }
+`;

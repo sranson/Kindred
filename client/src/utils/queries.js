@@ -9,6 +9,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      about
       savedCategories {
         title
         type
