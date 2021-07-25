@@ -65,3 +65,9 @@ const REMOVE_CATEGORY = gql`
     }
   }
 `;
+
+export const SINGLE_UPLOAD_MUTATION = gql`
+  mutation singleFileUpload($file: String!) {
+    singleFileUpload(file: $file)
+  }
+`;

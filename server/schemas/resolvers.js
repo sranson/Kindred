@@ -1,9 +1,11 @@
 //need to use the context middleware from the Apollo Server configured in the server file and pass it in as the third arguement for all requests where authorization is required. Example would be saving a category and deleting it
 //context is like a sessionId or cookie for a user
 
-const { AuthenticationError } = require("apollo-server-express");
+const { AuthenticationError, GraphQLUpload } = require("apollo-server-express");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
+const cloudinary = require('cloudinary');
+require('dotenv').config();
 
 const resolvers = {
   Query: {
@@ -45,7 +47,26 @@ const resolvers = {
 
       return { token, user };
     },
+    singleFileUpload: async (parent, {file}, context) => {
+      cloudinary.config({
+        cloud_name: process.env.CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_SECRET,
+      });
 
+      if (context.user) {
+        try {
+          const result = await cloudinary.v2.uploader.upload(file, {
+            allowed_formats: ['jpg', 'png'],
+            public_id: '',
+            folder: `${user.username}`
+          });
+        } catch (e) {
+          return `Image could not be uploaded: ${e.message}`;
+        }
+        return `Succesful Photo Upload URL: ${result.url}`
+      }
+    },
     saveCategory: async (parent, { title, type, description, wikiUrl, youtubeUrl, image }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
