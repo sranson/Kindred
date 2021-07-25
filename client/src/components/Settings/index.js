@@ -1,6 +1,7 @@
 import { useApolloClient, useMutation } from '@apollo/client';
 import {SINGLE_UPLOAD_MUTATION, UPDATE_ABOUT} from '../../utils/mutations'
 import React, {useState} from 'react';
+import './settings.css'
 
 const Settings = () => {
     const [updateAbout] = useMutation(UPDATE_ABOUT);
@@ -51,7 +52,7 @@ const Settings = () => {
             <form onSubmit={aboutSubmit}>
                 <label>Write something about yourself!</label>
                 <textarea id="about" value={about} onChange={handleInput}></textarea>
-                <input type="submit"/>
+                <input className="col-xs-4" type="submit"/>
             </form>
             {/* <form>
                 <input type="file" onChange={onChangeHandler}></input>
