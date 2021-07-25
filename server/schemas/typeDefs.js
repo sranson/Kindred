@@ -34,7 +34,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     updateAbout(about: String!): User
-    singleFileUpload(file: String!): String!
+    singleFileUpload(file: String): String
     saveCategory(title: String, type: String, description: String, wikiUrl: String, youtubeUrl: String, image: String): User
 
     removeCategory(categoryId: ID!): User
