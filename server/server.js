@@ -4,6 +4,8 @@ const { ApolloServer } = require("apollo-server-express");
 const db = require("./config/connection");
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
+const TastediveAPI = require("./graphql/Similarities")
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,6 +13,11 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+  dataSources: () => {
+    return {
+      TastediveAPI: new TastediveAPI()
+    }
+  },
 });
 
 server.applyMiddleware({ app });

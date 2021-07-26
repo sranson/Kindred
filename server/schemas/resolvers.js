@@ -16,6 +16,21 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    getSimilarities: async(_, __, { dataSources }) => {
+      let similaritiesArray = []
+      try {
+        const allSimilarities = await dataSources.TastediveAPI.getSimilarities();
+        const searchedFor = allSimilarities.Similar.Info[0]
+        console.log(searchedFor)
+        const data = allSimilarities.Similar.Results
+        for (i=0; i < 8; i++) {
+          similaritiesArray.push(data[i])
+        }
+        console.log(similaritiesArray)
+      } catch(error) {
+        throw error;
+      }
+    },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {

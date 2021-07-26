@@ -8,6 +8,14 @@ const typeDefs = gql`
     savedCategories: [Category]
   }
 
+  type SimilarResult {
+    _id: ID!
+    name: String
+    wTeaser: String
+    wUrl: String
+    yUrl: String
+  }
+
   type Category {
     _id: ID!
     title: String
@@ -26,6 +34,7 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
+    getSimilarities: [SimilarResult]
   }
 
   type Mutation {
