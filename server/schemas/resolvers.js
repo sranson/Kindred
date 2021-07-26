@@ -16,22 +16,26 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    getSimilarities: async(_, __, { dataSources }) => {
+
+
+    getSimilarities: async(_, { term, category }, { dataSources }) => {
       let similaritiesArray = []
       try {
-        const allSimilarities = await dataSources.TastediveAPI.getSimilarities();
-        const searchedFor = allSimilarities.Similar.Info[0]
-        console.log(searchedFor)
+        const allSimilarities = await dataSources.TastediveAPI.getSimilarities(term, category)
+        const searchedForResult = allSimilarities.Similar.Info[0]
+        similaritiesArray.push(searchedForResult)
         const data = allSimilarities.Similar.Results
         for (i=0; i < 8; i++) {
           similaritiesArray.push(data[i])
         }
-        console.log(similaritiesArray)
+        return similaritiesArray;
       } catch(error) {
         throw error;
       }
     },
   },
+
+
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
