@@ -51,3 +51,16 @@ query matches {
   }
   }
 `;
+
+
+export const GET_SIMILARITIES = gql`
+query getSimilarities($term: String!, $category: String!) {
+  getSimilarities(term: $term, category: $category){
+    Name
+    Type
+    wTeaser
+    wUrl
+    yUrl
+  }
+}
+`;

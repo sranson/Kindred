@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import { useQuery } from "@apollo/client";
 import SearchBar from '../components/SearchBar';
 import Card from '../components/Card'
-import SimilarResultCard from '../components/Card/SimilarResultCard'
+import SimilarResultCard from '../components/Card/SimilarResultCard';
+import { GET_RESULTS } from '../utils/queries'
 
 
 class SearchResultScreen extends React.Component {
