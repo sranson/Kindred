@@ -7,28 +7,21 @@ import SimilarResultCard from '../components/Card/SimilarResultCard';
 import { GET_SIMILARITIES } from '../utils/queries'
 
 
-class SearchResultScreen extends React.Component{
-    constructor() {
-        super();
-    }
-
-    render() {
-        return (
-            <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>            
-                <SearchBar onSearchBtnClick={onSearchSubmit} />
-            </div>    
-        )
-    }
+const SearchResultScreen = () => {
+    return (
+        <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>            
+            <SearchBar onSearchBtnClick={onSearchSubmit} />
+        </div>    
+    )
 }
 
 
 const onSearchSubmit = (term, category) => {
     console.log(term, category);
-
-    return(
-        <div>
-            <h1>Search Results Screen</h1>
-        </div>
+    return (
+        <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>            
+            <SearchBar passToSearchScreen={onSearchSubmit} />
+        </div>    
     )
 }
 
