@@ -82,3 +82,15 @@ export const REMOVE_CATEGORY = gql`
     }
   }
 `;
+
+export const LOAD_RESULTS = gql`
+mutation getSimilarities($term: String!, $category: String!) {
+  getSimilarities(term: $term, category: $category){
+    Name
+    Type
+    wTeaser
+    wUrl
+    yUrl
+  }
+}
+`;

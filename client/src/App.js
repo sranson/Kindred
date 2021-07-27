@@ -13,12 +13,13 @@ import Home from "./components/Home/index";
 import Login from "./components/Login/index";
 import Signup from "./components/Signup/index";
 import Profile from "./components/Profile";
-import SearchResultScreen from "./screens/SearchResultScreen";
+// import SearchResultScreen from "./screens/SearchResultScreen";
+import SearchBar from "./components/SearchBar";
 import Matches from "./components/Matches";
 import Settings from "./components/Settings";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Auth from "./utils/auth";
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -98,7 +99,7 @@ function App() {
               </Route>
               <Route exact path="/search">
                 <NavBar />
-                <SearchResultScreen />
+                <SearchBar />
               </Route>
               <Route exact path="/matches">
                 <NavBar />

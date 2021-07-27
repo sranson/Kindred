@@ -36,12 +36,12 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
-    getSimilarities(term: String!, category: String!): [SimilarResult]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    getSimilarities(term: String!, category: String!): [SimilarResult]
 
     saveCategory(
       title: String
