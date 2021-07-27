@@ -61,7 +61,7 @@ export default function Login() {
       <div>
         <Form onSubmit={onSubmit} noValidate>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label id="email">Email</Form.Label>
+            <Form.Label id="loginEmail">Email</Form.Label>
             <Form.Control id="inputUser"
               type="email"
               placeholder="Your email address"
@@ -75,7 +75,7 @@ export default function Login() {
             controlId="formBasicPassword"
           >
 
-            <Form.Label id="password">Password</Form.Label>
+            <Form.Label id="loginPassword">Password</Form.Label>
             <Form.Control id="inputPassword"
               type="password"
               placeholder="Your password"
