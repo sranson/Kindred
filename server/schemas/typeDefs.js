@@ -37,7 +37,7 @@ const typeDefs = gql`
     singleFileUpload(file: String): String
     saveCategory(title: String, type: String, description: String, wikiUrl: String, youtubeUrl: String, image: String): User
 
-    removeCategory(categoryId: ID!): User
+    removeCategory(categoryTitle: String!): User
   }
 `;
 
