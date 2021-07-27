@@ -5,6 +5,8 @@ const typeDefs = gql`
     _id: ID!
     username: String
     email: String
+    about: String
+    profilePic: String
     savedCategories: [Category]
   }
 
@@ -17,7 +19,7 @@ const typeDefs = gql`
     wikiUrl: String
     youtubeUrl: String
   }
-
+  
   type Auth {
     token: ID!
     user: User
@@ -31,15 +33,9 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-
-    saveCategory(
-      title: String
-      type: String
-      description: String
-      wikiUrl: String
-      youtubeUrl: String
-      image: String
-    ): User
+    updateAbout(about: String!): User
+    singleFileUpload(file: String): String
+    saveCategory(title: String, type: String, description: String, wikiUrl: String, youtubeUrl: String, image: String): User
 
     removeCategory(categoryTitle: String!): User
   }
