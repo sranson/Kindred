@@ -5,8 +5,8 @@ const typeDefs = gql`
     _id: ID!
     username: String
     email: String
-    profilePic: String
     about: String
+    profilePic: String
     savedCategories: [Category]
   }
 

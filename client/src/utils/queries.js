@@ -10,6 +10,7 @@ export const QUERY_ME = gql`
       username
       email
       about
+      profilePic
       savedCategories {
         title
         type
@@ -43,12 +44,12 @@ export const QUERY_USERS = gql`
 //matches query
 export const QUERY_MATCHES = gql`
 query matches {
-  users {
+  users{
     username
     savedCategories{
       type 
       title
     }
   }
-  }
+}
 `;
