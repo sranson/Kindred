@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    margin: 10px 50px;
+}
+
+form textarea {
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    border-radius: 5px;
+}

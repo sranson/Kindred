@@ -19,6 +19,7 @@ const categorySchema = new Schema({
   youtubeUrl: {
     type: String,
   },
+  similar: [String],
 });
 
 module.exports = categorySchema;
