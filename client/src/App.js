@@ -61,7 +61,7 @@ function App() {
                 <Signup />
               </Route>
               <Route exact path="/profile">
-                <Login />
+                <Login /> 
               </Route>
               <Route exact path="/search">
                 <Login />
