@@ -29,21 +29,17 @@
 }
 
 #inputUser {
-    margin: 5px 0 0 200px;
+    /* margin: 5px 0 0 200px; */
     font-size: 30px;
-    width: 60%;
-    align-content: center;
+    margin: flex;
 }
 
 #inputPassword {
-    margin: 5px 0 0 200px;
-    width: 60%;
-    align-content: center;
+    /* margin: 5px 0 0 200px; */
     font-size: 30px;
+    margin: flex;
 }
 
 #button {
-    margin: 20px 200px 20px 200px;
-    width: 60%;
-   
+    margin: 20px 200px 20px 200px; 
 }
