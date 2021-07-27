@@ -4,6 +4,7 @@
   "description": "Project 3",
   "main": "server/server.js",
   "dependencies": {
+    "apollo-datasource-rest": "^3.0.2",
     "graphql": "^15.5.1"
   },
   "devDependencies": {

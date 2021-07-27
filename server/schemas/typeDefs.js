@@ -1,6 +1,16 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
+  type SimilarResult {
+    _id: ID!
+    Name: String
+    Type: String
+    wTeaser: String
+    wUrl: String
+    yUrl: String
+  }
+
+
   type User {
     _id: ID!
     username: String
@@ -26,6 +36,7 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
+    getSimilarities(term: String!, category: String!): [SimilarResult]
   }
 
   type Mutation {
