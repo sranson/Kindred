@@ -109,7 +109,7 @@ export default function Signup() {
             </Button>
           </div>
           <div id="signUpButton" className="d-grid gap-2">
-            <Button type="submit" href="../Login" variant="secondary" size="lg">
+            <Button type="submit" href="../login" variant="secondary" size="lg">
               Already Have An Account? Log in Here
             </Button>
           </div>

@@ -9,9 +9,19 @@ const logoutStyle = {
 const NavBar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-muted"
+        style={{ borderBottom: "3px solid black"}}
+      >
+        <div
+          className="container-fluid"
+          style={{ fontFamily: "Odibee Sans"}}
+        >
+          <Link
+            style={{ fontFamily: "Odibee Sans", fontSize: "47px" }}
+            className="navbar-brand"
+            to="/"
+          >
             Kindred
           </Link>
           <button
@@ -29,7 +39,7 @@ const NavBar = () => {
             className="collapse navbar-collapse justify-content-end"
             id="navbarNav"
           >
-            <ul className="navbar-nav">
+            <ul className="navbar-nav" style={{fontSize: "25px"}}>
               <li className="nav-item">
                 <NavLink
                   className="nav-link"
