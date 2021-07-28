@@ -26,6 +26,8 @@ const SearchBar = () => {
           const similarities = Object.values(values2)
           const similaritiesArray = similarities[0]
           setResultsArray(similaritiesArray)
+          setSearchTerm("")
+          setSearchCategory("")
         })
       } catch(error){
         console.log(error);
@@ -76,7 +78,6 @@ const SearchBar = () => {
           </div>
         </div>
       </div>
-        
         <div className="row" style={{ marginLeft: "3%", marginRight: "3%" }}>
             {resultsArray.map((result) => {
               if (result.yUrl) {
