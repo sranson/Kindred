@@ -51,7 +51,6 @@ const Profile = () => {
       <div>
         {data.me.savedCategories.length > 0 ? (
           <ul>
-
             <div className="row" >
             {filteredCategory(chosenCategory).map((category) => {
               if (category.youtubeUrl === null) {
@@ -69,7 +68,6 @@ const Profile = () => {
               } 
             })}
             </div>
-
           </ul>
         ) : (
           <div className="ml-2">No interest saved for this category!</div>
