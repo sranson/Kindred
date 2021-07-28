@@ -1,7 +1,7 @@
 //need to use the context middleware from the Apollo Server configured in the server file and pass it in as the third arguement for all requests where authorization is required. Example would be saving a category and deleting it
 //context is like a sessionId or cookie for a user
 
-const { AuthenticationError } = require("apollo-server-express");
+const { AuthenticationError, GraphQLUpload } = require("apollo-server-express");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
 const cloudinary = require('cloudinary');

@@ -29,7 +29,7 @@ const typeDefs = gql`
     wikiUrl: String
     youtubeUrl: String
   }
-
+  
   type Auth {
     token: ID!
     user: User
