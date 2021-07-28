@@ -78,24 +78,40 @@ const SearchBar = () => {
           </div>
         </div>
       </div>
-        <div className="row" style={{ marginLeft: "3%", marginRight: "3%" }}>
+        <div className="row" style={{ marginLeft: "3%" }}>
             {resultsArray.map((result) => {
-              if (result.yUrl) {
-                return(
-                  <div className="col-md-3" style={{ marginTop: "3%", marginBottom: "3%" }}>
-                    <SimilarResultCard type={result.Type} video={result.yUrl} title={result.Name} description={result.wTeaser} moreInfo={result.wUrl} /> 
-                  </div>
-                )
-              } else if (!result.video) {
-                return(
-                  <div className="col-md-3" style={{ marginTop: "3%", marginBottom: "3%" }}>
-                    <Card type={result.Type} title={result.Name} description={result.wTeaser} moreInfo={result.wUrl} /> 
-                  </div>
-                )
+
+              if (result === resultsArray[0]) {
+                if (result.yUrl) {
+                  return(
+                    <div className="col-md-12" style={{ marginTop: "3%", marginBottom: "3%"}}>
+                      <SimilarResultCard type={result.Type} video={result.yUrl} title={result.Name} description={result.wTeaser} moreInfo={result.wUrl} /> 
+                    </div>
+                  )
+                } else if (!result.yUrl) {
+                  return(
+                    <div className="col-md-12" style={{ marginTop: "3%", marginBottom: "3%" }}>
+                      <Card type={result.Type} title={result.Name} description={result.wTeaser} moreInfo={result.wUrl} /> 
+                    </div>
+                  )
+                }
+              } else {
+                if (result.yUrl) {
+                  return(
+                      <div className="col-md-3" style={{ marginTop: "3%", marginBottom: "3%" }}>
+                        <SimilarResultCard type={result.Type} video={result.yUrl} title={result.Name} description={result.wTeaser} moreInfo={result.wUrl} /> 
+                    </div>
+                  )
+                } else if (!result.yUrl) {
+                  return(
+                    <div className="col-md-3" style={{ marginTop: "3%", marginBottom: "3%" }}>
+                      <Card type={result.Type} title={result.Name} description={result.wTeaser} moreInfo={result.wUrl} /> 
+                    </div>
+                  )
+                }
               }
             })}
         </div>
-
       </div>
       )
     }

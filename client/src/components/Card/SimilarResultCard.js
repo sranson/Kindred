@@ -55,7 +55,7 @@ const SimilarResultCard = props => {
 
   if (props.video !== null) {
     return (
-      <div style={{ marginLeft: "4%" }}>
+      <div>
         <div className="card" style={{ width: "18rem" }}>
           <iframe width="285" height="315" src={props.video}></iframe>
           <div className="card-body">
@@ -75,20 +75,19 @@ const SimilarResultCard = props => {
     );
   } else {
     return (
-      <div style={{ marginLeft: "4%" }}>
+      <div>
         <div className="card" style={{ width: "18rem" }}>
           <div className="card-body">
             <h5 className="card-title">{props.title}</h5>
             <p className="card-text">{props.description.substring(0, 80)}...</p>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <a href={props.moreInfo} target="_blank" className="btn btn-info">Read More</a>
-              {props.profile ? (
-                <button href="#" target="_blank" className="btn btn-info" onClick={() => deleteTheCategory(props.title)}>
-                  {text}
-                </button>
-              ) : (
-                <a href="#" target="_blank" className="btn btn-info" onClick={saveTheCategory}>{text}</a>
-              )}
+              {
+                props.profile ? 
+                  ( <button href="#" target="_blank" className="btn btn-info" onClick={() => deleteTheCategory(props.title)}>{text}</button>) 
+                  : 
+                  ( <a href="#" target="_blank" className="btn btn-info" onClick={saveTheCategory}>{text}</a>)
+              }
             </div>
           </div>
         </div>

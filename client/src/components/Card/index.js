@@ -53,7 +53,7 @@ const Card = (props) => {
   };
 
     return (
-      <div style={{ marginLeft: "4%" }}>
+      <div>
         <div className="card" style={{ width: "18rem" }}>
           <div className="card-body">
             <h5 className="card-title">{props.title}</h5>
