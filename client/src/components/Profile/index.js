@@ -88,13 +88,13 @@ const Profile = () => {
       </div>
       {/* <div className="about">I just really love {data.me.username}</div> */}
       <div className="interests">
-        <Collapsible title="Music">{createCardGrid("Music")}</Collapsible>
-        <Collapsible title="Movies">{createCardGrid("Movies")}</Collapsible>
-        <Collapsible title="TV Shows">{createCardGrid("shows")}</Collapsible>
-        <Collapsible title="Books">{createCardGrid("books")}</Collapsible>
-        <Collapsible title="Authors">{createCardGrid("Authors")}</Collapsible>
-        <Collapsible title="Games">{createCardGrid("Games")}</Collapsible>
-        <Collapsible title="Podcasts">{createCardGrid("podcasts")}</Collapsible>
+        <Collapsible title="Music">{createCardGrid("music")}</Collapsible>
+        <Collapsible title="Movies">{createCardGrid("movie")}</Collapsible>
+        <Collapsible title="TV Shows">{createCardGrid("show")}</Collapsible>
+        <Collapsible title="Books">{createCardGrid("book")}</Collapsible>
+        <Collapsible title="Authors">{createCardGrid("author")}</Collapsible>
+        <Collapsible title="Games">{createCardGrid("game")}</Collapsible>
+        <Collapsible title="Podcasts">{createCardGrid("podcast")}</Collapsible>
       </div>
     </div>
   );
