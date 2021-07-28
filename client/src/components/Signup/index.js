@@ -64,7 +64,7 @@ export default function Signup() {
         <Form onSubmit={onSubmit} noValidate>
           <Form.Group id="username" className="mb-3" controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
-            <Form.Control
+            <Form.Control id="inputUserSignUp"
               required
               placeholder="Enter username"
               type="text"
@@ -75,7 +75,7 @@ export default function Signup() {
           </Form.Group>
           <Form.Group id="email" className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control
+            <Form.Control id="inputEmailSignUp"
               required
               type="email"
               placeholder="Your email address"
@@ -94,7 +94,7 @@ export default function Signup() {
             controlId="formBasicPassword"
           >
             <Form.Label>Password</Form.Label>
-            <Form.Control
+            <Form.Control id="inputPasswordSignUp"
               required
               type="password"
               placeholder="Your password"
@@ -103,12 +103,12 @@ export default function Signup() {
               onChange={onChange}
             />
           </Form.Group>
-          <div id="button" className="d-grid gap-2">
+          <div id="signUpButton" className="d-grid gap-2">
             <Button type="submit" variant="secondary" size="lg">
               Sign Up
             </Button>
           </div>
-          <div id="button" className="d-grid gap-2">
+          <div id="signUpButton" className="d-grid gap-2">
             <Button type="submit" href="../login" variant="secondary" size="lg">
               Already Have An Account? Log in Here
             </Button>

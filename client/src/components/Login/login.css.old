@@ -1,8 +1,8 @@
 .main {
     background: #bddac8;
+    box-sizing: border-box;
     height: 100vh;
 }
-
 
 .loginTitle {
     font-family: 'Odibee Sans';
@@ -18,28 +18,25 @@
     text-align: center;
 }
 
-#loginEmail{
-    margin: 20px 200px 20px 200px;
-    font-size: 50px;
+#email {
+    margin: 20px 500px 20px 500px;
 }
 
-#loginPassword{
+#password {
     margin: 20px 200px 20px 200px;
-    font-size: 50px;
 }
 
 #inputUser {
-    /* margin: 5px 0 0 200px; */
+    margin: 5px 0 0 200px;
     font-size: 30px;
-    margin: flex;
+    width: 80%;
 }
 
 #inputPassword {
-    /* margin: 5px 0 0 200px; */
-    font-size: 30px;
-    margin: flex;
+    margin: 5px 0 0 200px;
+    width: 80%;
 }
 
 #button {
-    margin: 20px 200px 20px 200px; 
+    margin: 5px;
 }

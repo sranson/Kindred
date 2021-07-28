@@ -9,6 +9,8 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      about
+      profilePic
       savedCategories {
         title
         type
@@ -49,6 +51,5 @@ query matches {
       title
     }
   }
-  }
+}
 `;
-

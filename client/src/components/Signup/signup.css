@@ -1,6 +1,6 @@
 .main {
     background: #bddac8;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     height: 100vh;
 }
 
@@ -17,6 +17,7 @@
     color: #152c43;
     text-align: center;
 }
+
 
 #username {
     margin: 20px 200px 20px 200px;
@@ -37,19 +38,18 @@
     font-size: 30px;
 }
 
-#inputUser {
+#inputUserSignUp {
     font-size: 20px;
 }
 
-#inputEmail {
+#inputEmailSignUp {
     font-size: 20px;
 }
 
-#inputPassword {
+#inputPasswordSignUp {
     font-size: 20px;
 }
 
-#button {
+#signUpButton {
     margin: 20px 200px 20px 200px;
 }
-

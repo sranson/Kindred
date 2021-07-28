@@ -15,6 +15,8 @@ const typeDefs = gql`
     _id: ID!
     username: String
     email: String
+    about: String
+    profilePic: String
     savedCategories: [Category]
   }
 
@@ -41,17 +43,10 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    updateAbout(about: String!): User
+    singleFileUpload(file: String): String
     getSimilarities(term: String!, category: String!): [SimilarResult]
-
-    saveCategory(
-      title: String
-      type: String
-      description: String
-      wikiUrl: String
-      youtubeUrl: String
-      image: String
-    ): User
-
+    saveCategory(title: String, type: String, description: String, wikiUrl: String, youtubeUrl: String, image: String): User
     removeCategory(categoryTitle: String!): User
   }
 `;

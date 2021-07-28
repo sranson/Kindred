@@ -1,47 +1,8 @@
-import React from 'react';
-import axios from 'axios';
-import { useState } from 'react';
-import { useQuery } from '@apollo/client';
-import SearchBar from '../components/SearchBar';
-import Card from '../components/Card'
-import SimilarResultCard from '../components/Card/SimilarResultCard'
-
-
-
-const SearchResultScreen = props => {
-    console.log(props);
-    if (!this.state.searchedImage) {
-        return (
-            <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>            
-                <SearchBar onSearchBtnClick={this.onSearchSubmit} />
-            </div>    
-        )
-    }
-    if (this.state.searchedImage) {
-        return (
-        <div style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
-            <SearchBar onSearchBtnClick={this.onSearchSubmit} />
-            <Card type={this.state.searchedType} image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
-            <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
-                    {this.state.similaritiesArray.map((result) => {
-                        return (
-                            <div className="col-md-3" style={{ marginBottom: "3%" }}>
-                                <SimilarResultCard type={this.state.searchedType} video={result.yUrl} title={result.Name} description={result.wTeaser.substring(0, 80)} moreInfo={result.wUrl}/>
-                            </div>
-                        )
-                    })}
-            </div>
-        </div>
-        )
-    }
-}
-
-
-export default SearchResultScreen;
-
-
-
-
+// import React from 'react';
+// import axios from 'axios';
+// import SearchBar from '../components/SearchBar';
+// import Card from '../components/Card'
+// import SimilarResultCard from '../components/Card/SimilarResultCard'
 
 
 // class SearchResultScreen extends React.Component {
@@ -113,7 +74,7 @@ export default SearchResultScreen;
 //                 <SearchBar onSearchBtnClick={this.onSearchSubmit} />
 //                 <Card type={this.state.searchedType} image={this.state.searchedImage} title={this.state.searchedTitle} description={this.state.searchedForDescrip} moreInfo={this.state.searchedForWiky}/>
 //                 <div className="row" style={{ marginTop: "3%", marginLeft: "3%", marginRight: "3%" }}>
-//                         {this.state.similaritiesArray.map((result) => {
+//                         {this.state.similarities.map((result) => {
 //                             return (
 //                                 <div className="col-md-3" style={{ marginBottom: "3%" }}>
 //                                     <SimilarResultCard type={this.state.searchedType} video={result.yUrl} title={result.Name} description={result.wTeaser.substring(0, 80)} moreInfo={result.wUrl}/>
@@ -127,3 +88,5 @@ export default SearchResultScreen;
 //     }
 // }
 
+
+// export default SearchResultScreen;

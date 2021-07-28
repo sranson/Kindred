@@ -4,6 +4,8 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
+const cloudinary = require('cloudinary');
+require('dotenv').config();
 const { TastediveAPI } = require("../utils/dataSource");
 
 const resolvers = {
@@ -46,7 +48,37 @@ const resolvers = {
 
       return { token, user };
     },
+    updateAbout: async (parent, {about}, context) => {
+      if(context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          {_id: context.user._id},
+          {about: about},
+          { new: true, runValidators: true }
+        );
+        return updatedUser;
+      }
+    },
 
+    singleFileUpload: async (parent, {file}, context) => {
+      cloudinary.config({
+        cloud_name: process.env.CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_SECRET,
+      });
+
+      if (context.user) {
+        try {
+          const result = await cloudinary.v2.uploader.upload(file, {
+            allowed_formats: ['jpg', 'png'],
+            public_id: '',
+            folder: `${user.username}`
+          });
+        } catch (e) {
+          return `Image could not be uploaded: ${e.message}`;
+        }
+        return `Succesful Photo Upload URL: ${result.url}`
+      }
+    },
     saveCategory: async (parent, { title, type, description, wikiUrl, youtubeUrl, image }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(

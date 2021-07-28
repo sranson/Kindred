@@ -83,6 +83,22 @@ export const REMOVE_CATEGORY = gql`
   }
 `;
 
+export const SINGLE_UPLOAD_MUTATION = gql`
+  mutation singleFileUpload($file: String) {
+    singleFileUpload(file: $file)
+  }
+`;
+
+export const UPDATE_ABOUT = gql`
+  mutation updateAbout($about: String!) {
+    updateAbout(about: $about) {
+      _id
+      username
+      about
+    }
+  }
+`;
+
 export const LOAD_RESULTS = gql`
 mutation getSimilarities($term: String!, $category: String!) {
   getSimilarities(term: $term, category: $category){
