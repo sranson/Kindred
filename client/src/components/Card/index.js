@@ -52,118 +52,25 @@ const Card = (props) => {
     }
   };
 
-  if (props.image) {
     return (
-      <div style={{ marginLeft: "4%" }}>
+      <div>
         <div className="card" style={{ width: "18rem" }}>
-          <img
-            width="285"
-            height="315"
-            src={props.image}
-            className="card-img-top"
-            alt="..."
-          />
           <div className="card-body">
             <h5 className="card-title">{props.title}</h5>
-            <p className="card-text">{props.description}...</p>
+            <p className="card-text">{props.description.substring(0, 80)}...</p>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <a
-                href={props.moreInfo}
-                target="_blank"
-                className="btn btn-info"
-              >
-                Read More
-              </a>
+              <a href={props.moreInfo} target="_blank" className="btn btn-info">Read More</a>
               {props.profile ? (
-                <button
-                  href="#"
-                  target="_blank"
-                  className="btn btn-info"
-                  onClick={() => deleteTheCategory(props.title)}
-                >
-                  {text}
-                </button>
+                <button href="#" target="_blank" className="btn btn-info" onClick={() => deleteTheCategory(props.title)}>{text}</button>
               ) : (
-                <button
-                  href="#"
-                  target="_blank"
-                  className="btn btn-info"
-                  onClick={saveTheCategory}
-                >
-                  {text}
-                </button>
+                <button href="#" target="_blank" className="btn btn-info" onClick={saveTheCategory}>{text}</button>
               )}
             </div>
           </div>
         </div>
       </div>
     );
-  } else {
-    return (
-      <div style={{ marginLeft: "4%" }}>
-        <div className="card" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">{props.title}</h5>
-            <p className="card-text">{props.description}...</p>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <a
-                href={props.moreInfo}
-                target="_blank"
-                className="btn btn-info"
-              >
-                Read More
-              </a>
-              {props.profile ? (
-                <button
-                  href="#"
-                  target="_blank"
-                  className="btn btn-info"
-                  onClick={() => deleteTheCategory(props.title)}
-                >
-                  {text}
-                </button>
-              ) : (
-                <button
-                  href="#"
-                  target="_blank"
-                  className="btn btn-info"
-                  onClick={saveTheCategory}
-                >
-                  {text}
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 };
 
 export default Card;
 
-// return (
-//   <div style={{ marginLeft: "4%" }}>
-//     <div className="card" style={{ width: "18rem" }}>
-//       <img src={props.image} className="card-img-top" alt="..." />
-//       <div className="card-body">
-//         <h5 className="card-title">{props.title}</h5>
-//         <p className="card-text">{props.description}...</p>
-//         <div style={{ display: "flex", justifyContent: "space-between" }}>
-//           <a href={props.moreInfo} target="_blank" className="btn btn-primary">
-//             Read More
-//           </a>
-//           {props.profile ? (
-//             <a href="#" target="_blank" className="btn btn-primary" onClick={deleteTheCategory}>
-//               {text}
-//             </a>
-//           ) : (
-//             <a href="#" target="_blank" className="btn btn-primary" onClick={saveTheCategory}>
-//               {text}
-//             </a>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// );
