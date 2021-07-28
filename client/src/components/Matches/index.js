@@ -1,32 +1,26 @@
 import React from "react";
-// import { useQuery, gql } from '@apollo/client';
-// import { QUERY_MATCHES } from '../../utils/queries';
-// import { useParams } from 'react-router-dom';
+// import { useQuery } from "@apollo/client";
+// import { QUERY_USERS } from "../../utils/queries";
 
 const Matches = () => {
-  //   const { username } = useParams();
-  //   const { savedCategory } = useParams();
-
-  //   const { loading, data } = useQuery(
-  //     QUERY_MATCHES,
-  //     {
-  //       variables: { username: username, savedCategory: savedCategory },
-  //     },
-  //     console.log(data)
-  //   );
-  //   const matches = data.users.username || {};
-
-  //   if (loading) {
-  //     return <div>Loading...</div>;
-  //   }
+  // const { loading, data } = useQuery(QUERY_USERS);
+  // if (loading) {
+  //   return <h2>Loading...</h2>;
+  // }
 
   return (
-    // <main>
-    <h1>
-      Matches
-      {/* <Matches matches={matches.userName.savedCategory} /> */}
-    </h1>
-    // {/* </main> */}
+    <div>
+      <h1>Matches</h1>
+      {/* <div>
+        {data.users.length > 0 ? (
+          data.users.map((user) => {
+            <p>{user.username}</p>;
+          })
+        ) : (
+          <h2>No users found!!!</h2>
+        )}
+      </div> */}
+    </div>
   );
 };
 
