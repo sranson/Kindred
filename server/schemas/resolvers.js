@@ -6,6 +6,7 @@ const { User } = require("../models");
 const { signToken } = require("../utils/auth");
 const cloudinary = require('cloudinary');
 require('dotenv').config();
+const { TastediveAPI } = require("../utils/dataSource");
 
 const resolvers = {
   Query: {
@@ -101,6 +102,21 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    getSimilarities: async (_, { term, category }, { dataSources }) => {
+      let similaritiesArray = []
+      try {
+        const allSimilarities = await dataSources.TastediveAPI.getSimilarities(term, category)
+        const searchedForResult = allSimilarities.Similar.Info[0]
+        similaritiesArray.push(searchedForResult)
+        const data = allSimilarities.Similar.Results
+        for (i=0; i < 8; i++) {
+          similaritiesArray.push(data[i])
+        }
+        return similaritiesArray;
+      } catch(error) {
+        throw error;
+      }
+    }
   },
 };
 
