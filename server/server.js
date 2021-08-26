@@ -13,6 +13,10 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+  // The dataSources option is a function that returns an object containing instances of your 
+  // DataSource subclasses
+  // It automatically assigns the returned object to the dataSources field of the context object 
+  // that's passed between your server's resolvers.
   dataSources: () => {
     return {
       TastediveAPI: new TastediveAPI()
